@@ -5,14 +5,53 @@ const output = document.getElementById("prompt-output");
 const status = document.getElementById("result-status");
 const copyButton = document.getElementById("copy-button");
 
-// При выборе карточки меняем цель в форме.
+// Выбор шаблона заполняет поля формы готовыми параметрами.
 document.querySelectorAll(".choose-template").forEach(function (button) {
   button.addEventListener("click", function () {
     goal.value = button.dataset.goal;
-    document.getElementById("template-message").textContent = "Выбран шаблон: " + goal.value;
+    document.getElementById("detail").value = button.dataset.detail;
+    document.getElementById("extra").value = button.dataset.extra || "Без дополнительных разделов";
+    document.getElementById("formulas").checked = button.dataset.formulas === "true";
+    document.getElementById("terms").checked = button.dataset.terms === "true";
+    document.getElementById("homework").checked = button.dataset.homework === "true";
+    document.getElementById("questions").checked = button.dataset.questions === "true";
+
+    // Показываем, какая карточка выбрана.
+    document.querySelectorAll(".choose-template").forEach(function (item) {
+      item.textContent = "Выбрать";
+      item.setAttribute("aria-pressed", "false");
+      item.parentElement.classList.remove("selected");
+    });
+    button.textContent = "Выбрано";
+    button.setAttribute("aria-pressed", "true");
+    button.parentElement.classList.add("selected");
+
+    const message = "Применён шаблон «" + goal.value + "». Выбери тип материала, проверь параметры и сформируй промпт.";
+    document.getElementById("template-message").textContent = message;
+    document.getElementById("builder-message").textContent = message;
+    clearResult();
     document.getElementById("builder").scrollIntoView();
   });
 });
+
+// После изменения параметров старый промпт больше не считается актуальным.
+function clearResult() {
+  output.value = "";
+  copyButton.disabled = true;
+  status.textContent = "Настройки изменены. Сформируй промпт заново.";
+}
+form.addEventListener("change", clearResult);
+
+// Понятные правила для каждой учебной цели.
+const instructions = {
+  "Подробный конспект": "Раздели материал на темы, сохрани важные определения и примеры.",
+  "Краткое резюме": "Коротко перечисли главные идеи без лишних подробностей.",
+  "Термины и определения": "Перечисли основные термины и дай их определения.",
+  "Формулы и алгоритмы": "Выпиши формулы, поясни обозначения и порядок действий.",
+  "Домашнее задание": "Найди задания, требования и сроки, если они названы.",
+  "Карточки Anki": "Составь карточки для повторения в формате «вопрос — ответ».",
+  "Самопроверка": "Составь вопросы для проверки знаний и правильные ответы к ним."
+};
 
 // Получаем значения формы и собираем из них обычный текст.
 form.addEventListener("submit", function (event) {
@@ -21,6 +60,7 @@ form.addEventListener("submit", function (event) {
   let text = "Подготовь ответ по приложенному учебному материалу.\n";
   text += "Тип материала: " + document.getElementById("material").value + ".\n";
   text += "Цель: " + goal.value + ".\n";
+  text += instructions[goal.value] + "\n";
   text += "Язык: " + document.getElementById("language").value + ".\n";
   text += "Подробность: " + document.getElementById("detail").value + ".\n";
   text += "Работа с источником: " + document.getElementById("source-mode").value + ".\n";

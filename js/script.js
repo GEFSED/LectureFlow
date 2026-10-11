@@ -27,7 +27,6 @@ document.querySelectorAll(".choose-template").forEach(function (button) {
     button.parentElement.classList.add("selected");
 
     const message = "Применён шаблон «" + goal.value + "». Выбери тип материала, проверь параметры и сформируй промпт.";
-    document.getElementById("template-message").textContent = message;
     document.getElementById("builder-message").textContent = message;
     clearResult();
     document.getElementById("builder").scrollIntoView();
@@ -64,7 +63,10 @@ form.addEventListener("submit", function (event) {
   text += "Язык: " + document.getElementById("language").value + ".\n";
   text += "Подробность: " + document.getElementById("detail").value + ".\n";
   text += "Работа с источником: " + document.getElementById("source-mode").value + ".\n";
-  text += "Дополнительные разделы: " + document.getElementById("extra").value + ".\n";
+  const extra = document.getElementById("extra").value;
+  if (extra !== "Без дополнительных разделов") {
+    text += "Добавь раздел: " + extra + ".\n";
+  }
 
   if (document.getElementById("formulas").checked) text += "Сохрани формулы.\n";
   if (document.getElementById("terms").checked) text += "Выдели определения.\n";

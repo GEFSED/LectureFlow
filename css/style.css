@@ -37,6 +37,8 @@ select, textarea { width: 100%; padding: 12px; border: 1px solid #d9ddeb; border
 .card p { color: #626b7b; flex: 1; }
 .choose-template { padding: 9px 14px; border: 1px solid #d9ddeb; border-radius: 8px; background: white; font: inherit; cursor: pointer; }
 .choose-template:hover { border-color: #635bff; }
+.card.selected { border-color: #635bff; box-shadow: 0 0 0 1px #635bff; background: #eceaff; }
+.card.selected .choose-template { background: #635bff; color: white; border-color: #635bff; }
 .note { color: #626b7b; }
 .result-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
 .result-panel textarea { min-height: 210px; resize: vertical; margin: 10px 0 14px; }

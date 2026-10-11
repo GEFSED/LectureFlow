@@ -42,6 +42,7 @@
       <div class="container">
         <h2>1. Настрой задачу</h2>
         <p class="subtitle">Выбери параметры. Файл нужно будет приложить во внешней нейросети.</p>
+        <p id="builder-message" class="note" role="status">Настрой форму самостоятельно или выбери шаблон ниже.</p>
         <form id="prompt-form">
           <div class="file-box">
             <label for="source-file">Добавь материал (необязательно)</label>
@@ -122,42 +123,42 @@
     <section id="templates" class="section">
       <div class="container">
         <h2>2. Или выбери готовый шаблон</h2>
-        <p class="subtitle">Шаблон необязателен. Он просто выбирает цель в форме выше.</p>
+        <p class="subtitle">Шаблон необязателен. Он подставляет готовые параметры, которые можно изменить вручную.</p>
         <div class="cards">
           <article class="card">
             <h3>Подробный конспект</h3>
             <p>Темы, пояснения, примеры и важные детали.</p>
-            <button class="choose-template" type="button" data-goal="Подробный конспект">Выбрать</button>
+            <button class="choose-template" type="button" data-goal="Подробный конспект" data-detail="Подробная" data-formulas="true" data-terms="true" data-homework="true" aria-pressed="false">Выбрать</button>
           </article>
           <article class="card">
             <h3>Краткое резюме</h3>
             <p>Главные тезисы без лишней информации.</p>
-            <button class="choose-template" type="button" data-goal="Краткое резюме">Выбрать</button>
+            <button class="choose-template" type="button" data-goal="Краткое резюме" data-detail="Краткая" aria-pressed="false">Выбрать</button>
           </article>
           <article class="card">
             <h3>Термины и определения</h3>
             <p>Основные понятия по исходному материалу.</p>
-            <button class="choose-template" type="button" data-goal="Термины и определения">Выбрать</button>
+            <button class="choose-template" type="button" data-goal="Термины и определения" data-detail="Средняя" data-extra="Термины и определения" aria-pressed="false">Выбрать</button>
           </article>
           <article class="card">
             <h3>Формулы и алгоритмы</h3>
             <p>Формулы, обозначения и порядок действий.</p>
-            <button class="choose-template" type="button" data-goal="Формулы и алгоритмы">Выбрать</button>
+            <button class="choose-template" type="button" data-goal="Формулы и алгоритмы" data-detail="Средняя" data-extra="Формулы и алгоритмы" aria-pressed="false">Выбрать</button>
           </article>
           <article class="card">
             <h3>Домашнее задание</h3>
             <p>Задания, сроки и требования преподавателя.</p>
-            <button class="choose-template" type="button" data-goal="Домашнее задание">Выбрать</button>
+            <button class="choose-template" type="button" data-goal="Домашнее задание" data-detail="Средняя" data-extra="Домашнее задание" aria-pressed="false">Выбрать</button>
           </article>
           <article class="card">
             <h3>Карточки Anki</h3>
             <p>Вопросы и ответы для повторения.</p>
-            <button class="choose-template" type="button" data-goal="Карточки Anki">Выбрать</button>
+            <button class="choose-template" type="button" data-goal="Карточки Anki" data-detail="Средняя" aria-pressed="false">Выбрать</button>
           </article>
           <article class="card">
             <h3>Самопроверка</h3>
             <p>Контрольные вопросы по материалу.</p>
-            <button class="choose-template" type="button" data-goal="Самопроверка">Выбрать</button>
+            <button class="choose-template" type="button" data-goal="Самопроверка" data-detail="Средняя" data-questions="true" aria-pressed="false">Выбрать</button>
           </article>
         </div>
         <p id="template-message" class="note" aria-live="polite">Можно выбрать карточку или настроить форму самостоятельно.</p>

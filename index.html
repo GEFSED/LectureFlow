@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LectureFlow — конструктор учебных промптов</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <p class="logo">LectureFlow</p>
+      <nav aria-label="Основная навигация">
+        <a href="#about">Как работает</a>
+        <a href="#templates">Шаблоны</a>
+        <a href="#result">Результат</a>
+        <a class="button" href="#builder">Начать</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="hero">
+      <div class="container hero-content">
+        <div>
+          <p class="tag">Для учёбы</p>
+          <h1>Собери точный промпт для конспекта за минуту</h1>
+          <p>Выбери тип материала и учебную задачу. LectureFlow составит текст запроса для нейросети.</p>
+          <a class="button" href="#builder">Настроить задачу</a>
+        </div>
+        <aside class="preview">
+          <h2>Пример результата</h2>
+          <p><strong>Задача: подробный конспект</strong></p>
+          <p>«Составь структурированный конспект строго по приложенному материалу…»</p>
+          <p class="preview-note">Это пример промпта, а не готовый конспект.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="builder" class="section white-section">
+      <div class="container">
+        <h2>1. Настрой задачу</h2>
+        <p class="subtitle">Выбери параметры. Файл нужно будет приложить во внешней нейросети.</p>
+        <form id="prompt-form">
+          <div class="file-box">
+            <label for="source-file">Добавь материал (необязательно)</label>
+            <input id="source-file" name="source-file" type="file" accept=".pdf,.docx,.txt,.ppt,.pptx">
+            <small>Файл выбирается только на твоём устройстве. LectureFlow не загружает и не читает его.</small>
+          </div>
+
+          <div class="fields">
+            <div>
+              <label for="material">Тип материала *</label>
+              <select id="material" name="material" required>
+                <option value="">Выбери тип</option>
+                <option>PDF</option>
+                <option>Презентация</option>
+                <option>Стенограмма</option>
+                <option>Текст / заметки</option>
+              </select>
+            </div>
+            <div>
+              <label for="detail">Подробность</label>
+              <select id="detail" name="detail">
+                <option>Краткая</option>
+                <option selected>Средняя</option>
+                <option>Подробная</option>
+              </select>
+            </div>
+            <div>
+              <label for="goal">Цель *</label>
+              <select id="goal" name="goal" required>
+                <option value="">Выбери цель</option>
+                <option>Подробный конспект</option>
+                <option>Краткое резюме</option>
+                <option>Термины и определения</option>
+                <option>Формулы и алгоритмы</option>
+                <option>Домашнее задание</option>
+                <option>Карточки Anki</option>
+                <option>Самопроверка</option>
+              </select>
+            </div>
+            <div>
+              <label for="source-mode">Работа с источником</label>
+              <select id="source-mode" name="source-mode">
+                <option>Строго по материалу</option>
+                <option>Можно добавить пояснения</option>
+              </select>
+            </div>
+            <div>
+              <label for="language">Язык результата</label>
+              <select id="language" name="language">
+                <option>Русский</option>
+                <option>Английский</option>
+              </select>
+            </div>
+            <div>
+              <label for="extra">Дополнительные разделы</label>
+              <select id="extra" name="extra">
+                <option>Без дополнительных разделов</option>
+                <option>Термины и определения</option>
+                <option>Формулы и алгоритмы</option>
+                <option>Домашнее задание</option>
+              </select>
+            </div>
+          </div>
+
+          <fieldset class="quick-options">
+            <legend>Быстрые параметры</legend>
+            <label><input type="checkbox" id="formulas"> Сохранить формулы</label>
+            <label><input type="checkbox" id="terms"> Выделить определения</label>
+            <label><input type="checkbox" id="homework"> Найти ДЗ</label>
+            <label><input type="checkbox" id="questions"> Добавить вопросы</label>
+          </fieldset>
+
+          <button class="button" type="submit">Сформировать промпт</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="templates" class="section">
+      <div class="container">
+        <h2>2. Или выбери готовый шаблон</h2>
+        <p class="subtitle">Шаблон необязателен. Он просто выбирает цель в форме выше.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Подробный конспект</h3>
+            <p>Темы, пояснения, примеры и важные детали.</p>
+            <button class="choose-template" type="button" data-goal="Подробный конспект">Выбрать</button>
+          </article>
+          <article class="card">
+            <h3>Краткое резюме</h3>
+            <p>Главные тезисы без лишней информации.</p>
+            <button class="choose-template" type="button" data-goal="Краткое резюме">Выбрать</button>
+          </article>
+          <article class="card">
+            <h3>Термины и определения</h3>
+            <p>Основные понятия по исходному материалу.</p>
+            <button class="choose-template" type="button" data-goal="Термины и определения">Выбрать</button>
+          </article>
+          <article class="card">
+            <h3>Формулы и алгоритмы</h3>
+            <p>Формулы, обозначения и порядок действий.</p>
+            <button class="choose-template" type="button" data-goal="Формулы и алгоритмы">Выбрать</button>
+          </article>
+          <article class="card">
+            <h3>Домашнее задание</h3>
+            <p>Задания, сроки и требования преподавателя.</p>
+            <button class="choose-template" type="button" data-goal="Домашнее задание">Выбрать</button>
+          </article>
+          <article class="card">
+            <h3>Карточки Anki</h3>
+            <p>Вопросы и ответы для повторения.</p>
+            <button class="choose-template" type="button" data-goal="Карточки Anki">Выбрать</button>
+          </article>
+          <article class="card">
+            <h3>Самопроверка</h3>
+            <p>Контрольные вопросы по материалу.</p>
+            <button class="choose-template" type="button" data-goal="Самопроверка">Выбрать</button>
+          </article>
+        </div>
+        <p id="template-message" class="note" aria-live="polite">Можно выбрать карточку или настроить форму самостоятельно.</p>
+      </div>
+    </section>
+
+    <section id="result" class="section white-section">
+      <div class="container">
+        <h2>3. Готовый результат</h2>
+        <div class="result-grid">
+          <div class="result-panel">
+            <p id="result-status" role="status">Пока промпт не сформирован.</p>
+            <label for="prompt-output">Текст промпта</label>
+            <textarea id="prompt-output" rows="10" readonly placeholder="Заполни форму и нажми «Сформировать промпт»."></textarea>
+            <button class="button" type="button" id="copy-button" disabled>Скопировать промпт</button>
+            <a class="plain-link" href="#builder">Изменить настройки</a>
+            <p class="small-text">Скопируй текст в нейросеть и отдельно прикрепи исходный учебный файл.</p>
+          </div>
+          <aside class="checklist">
+            <h3>Чек-лист проверки</h3>
+            <ul>
+              <li>Выбраны тип материала и цель.</li>
+              <li>Проверены язык и подробность.</li>
+              <li>Нужные требования добавлены в промпт.</li>
+              <li>Исходный файл будет приложен во внешней нейросети.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p><strong>LectureFlow</strong> — конструктор промптов для учебных материалов</p>
+      <p>Крупский Ярослав · Цифровые медиа · 2026</p>
+    </div>
+  </footer>
+</body>
+</html>

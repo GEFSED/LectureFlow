@@ -1,0 +1,24 @@
+{
+  "project": "LectureFlow",
+  "assignment": "HW4",
+  "date": "2026-10-25",
+  "source": "GEFSED/LectureFlow main @ 04864d1f9d9ee41bb62b796c5ef98c461b1bffa4",
+  "files": {
+    "DEFENSE_NOTES_HW4.md": "9e509eeb6faf3c489b4aec604478464c2ae81e19dc525d9b0ac434ccd75fab2b",
+    "README.md": "8b8c6bb1916fcf66f4f54eb060c224cff1d1801c79fa37ea860e10a8aeb7ed05",
+    "SUBMISSION_HW4.md": "0d7a58157391cdc3d04619f737e4ee93e998d0e8cafa602cb33eb55192776695",
+    "assets/images/README.txt": "bfbe8a58f4d08e9b555fde84ab7e475ee8ea40a59660fc9201a9734462e7bbb3",
+    "css/style.css": "ec31568cdc4b0267b40c88ad579bd2f63a44f2adaa2c969bfb90101e837eb504",
+    "data/data.json": "b7400308544cc399d806ca7702b251639d2557979fed3924b6cf2149e75a2efe",
+    "evidence/RUN_BROWSER_QA_REFERENCE.py": "758b7d12fe73366d0ab5d8bc3783305c3f0a61feabf0b9331f17588bfd0a5c24",
+    "evidence/after_desktop_1440.png": "567f513735d70601af1b2f9b2512ff2a1c1dbdd4b07803c35c84b78e08dab660",
+    "evidence/after_mobile_375.png": "a10f7958b7d2c9e74a51ebf3bd3913a73d33ca5198b15fa3de44a199fc2b2666",
+    "evidence/after_mobile_390.png": "8938181adf1af88251910b1d46a70e53b0a71a3cdf7c21351570ae783a7c12fb",
+    "evidence/after_tablet_768.png": "542500874479282dbc7ab1a283889f8d66339383ba6941dda04cc36ecd38e6fe",
+    "evidence/before_desktop_1440.png": "c0e2a2676e566a4f32ef542cab93423ca5530aa84fa9cd6784db4db35867e2d7",
+    "evidence/before_mobile_390.png": "c938e0acd7b06d8e03b611f250a033c4809062f0cdb80901681e0d1a7e9aa85d",
+    "evidence/qa_results.json": "09369c9b54c6109bb1bdc70563230b77db59319aa7e28d5ada1e6988ce494404",
+    "index.html": "c6b619e7c585121d9932c24ede2ceb9681bbd39e16b688b7d40ff48af8086ffd",
+    "js/script.js": "854ac042b533e97f934deb23b867a419658e6a2dddb8b5ce5dbb858e06995b38"
+  }
+}

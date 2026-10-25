@@ -28,6 +28,7 @@ document.querySelectorAll(".choose-template").forEach(function (button) {
 
     const message = "Применён шаблон «" + goal.value + "». Выбери тип материала, проверь параметры и сформируй промпт.";
     document.getElementById("builder-message").textContent = message;
+    document.getElementById("builder-message").classList.add("is-visible");
     clearResult();
     document.getElementById("builder").scrollIntoView();
   });
@@ -89,4 +90,12 @@ copyButton.addEventListener("click", async function () {
     output.select();
     status.textContent = "Копирование недоступно. Текст выделен — нажми Ctrl+C.";
   }
+});
+
+// Отображаем только имя выбранного локального файла (не читаем и не отправляем его).
+document.getElementById("source-file").addEventListener("change", function (event) {
+  const file = event.target.files[0];
+  document.getElementById("file-name").textContent = file
+    ? "Выбран: " + file.name + ". Не забудь приложить файл во внешней нейросети."
+    : "Файл не выбран. Приложи источник к запросу во внешней нейросети.";
 });

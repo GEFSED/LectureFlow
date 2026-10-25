@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LectureFlow — конструктор учебных промптов</title>
+  <meta name="description" content="Конструктор учебных промптов: выбери материал, настрой задачу и получи запрос для внешней нейросети.">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
 </head>
@@ -17,23 +18,32 @@
         <a href="#result">Результат</a>
         <a class="button" href="#builder">Начать</a>
       </nav>
+      <details class="mobile-navigation">
+        <summary aria-label="Открыть навигацию">☰</summary>
+        <nav aria-label="Мобильная навигация">
+          <a href="#about">Как работает</a>
+          <a href="#templates">Шаблоны</a>
+          <a href="#result">Результат</a>
+          <a href="#builder">Начать</a>
+        </nav>
+      </details>
     </div>
   </header>
 
   <main>
     <section id="about" class="hero">
       <div class="container hero-content">
-        <div>
+        <div class="hero-copy">
           <p class="tag">Для учёбы</p>
-          <h1>Собери точный промпт для конспекта за минуту</h1>
-          <p>Выбери тип материала и учебную задачу. LectureFlow составит текст запроса для нейросети.</p>
+          <h1><span class="desktop-heading">Собери точный промпт для конспекта за минуту</span><span class="mobile-heading">Точный промпт для конспекта</span></h1>
+          <p class="hero-description"><span class="desktop-heading">Выбери материал, учебную задачу и ограничения. LectureFlow соберёт структурированный запрос, который легко проверить по исходнику.</span><span class="mobile-heading">Выбери материал и задачу — LectureFlow соберёт структурированный запрос.</span></p>
           <a class="button" href="#builder">Настроить задачу</a>
         </div>
-        <aside class="preview">
-          <h2>Пример результата</h2>
-          <p><strong>Задача: подробный конспект</strong></p>
-          <p>«Составь структурированный конспект строго по приложенному материалу…»</p>
-          <p class="preview-note">Это пример промпта, а не готовый конспект.</p>
+        <aside class="preview" aria-label="Пример будущего результата">
+          <p class="preview-caption">Пример результата · lecture_02.pdf</p>
+          <p class="preview-title">Задача: подробный конспект</p>
+          <div class="preview-example">«Составь подробный структурированный конспект строго по приложенному материалу…»</div>
+          <p class="preview-note">Пример · 7 пунктов проверки</p>
         </aside>
       </div>
     </section>
@@ -41,25 +51,32 @@
     <section id="builder" class="section white-section">
       <div class="container">
         <h2>1. Настрой задачу</h2>
-        <p class="subtitle">Выбери параметры. Файл нужно будет приложить во внешней нейросети.</p>
-        <p id="builder-message" class="note" role="status">Настрой форму самостоятельно или выбери шаблон ниже.</p>
+        <p class="subtitle">Чем точнее параметры, тем меньше уточнений придётся делать после.</p>
+        <p id="builder-message" class="note" role="status" aria-live="polite">Настрой форму самостоятельно или выбери шаблон ниже.</p>
         <form id="prompt-form">
           <div class="file-box">
-            <label for="source-file">Добавь материал (необязательно)</label>
-            <input id="source-file" name="source-file" type="file" accept=".pdf,.docx,.txt,.ppt,.pptx">
-            <small>Файл выбирается только на твоём устройстве. LectureFlow не загружает и не читает его.</small>
+            <div class="file-box-text">
+              <strong>Добавь материал</strong>
+              <small>PDF, DOCX, TXT или стенограмма — файл понадобится для промпта.</small>
+              <small id="file-name" class="file-name" aria-live="polite">Файл не загружается на сервер. Его нужно будет отдельно приложить к запросу в нейросети.</small>
+            </div>
+            <div class="file-box-control">
+              <input id="source-file" name="source-file" class="visually-hidden" type="file" accept=".pdf,.docx,.txt,.ppt,.pptx" aria-label="Выбрать исходный материал">
+              <label class="button file-button" for="source-file">Выбрать файл</label>
+            </div>
           </div>
 
           <div class="fields">
-            <div>
-              <label for="material">Тип материала *</label>
-              <select id="material" name="material" required>
+            <div class="field">
+              <label for="material">Тип материала <span aria-hidden="true">*</span></label>
+              <select id="material" name="material" required aria-describedby="material-error">
                 <option value="">Выбери тип</option>
                 <option>PDF</option>
                 <option>Презентация</option>
                 <option>Стенограмма</option>
                 <option>Текст / заметки</option>
               </select>
+              <small id="material-error" class="error-message">Выберите тип материала.</small>
             </div>
             <div>
               <label for="detail">Подробность</label>
@@ -69,9 +86,9 @@
                 <option>Подробная</option>
               </select>
             </div>
-            <div>
-              <label for="goal">Цель *</label>
-              <select id="goal" name="goal" required>
+            <div class="field">
+              <label for="goal">Цель <span aria-hidden="true">*</span></label>
+              <select id="goal" name="goal" required aria-describedby="goal-error">
                 <option value="">Выбери цель</option>
                 <option>Подробный конспект</option>
                 <option>Краткое резюме</option>
@@ -81,6 +98,7 @@
                 <option>Карточки Anki</option>
                 <option>Самопроверка</option>
               </select>
+              <small id="goal-error" class="error-message">Выберите цель.</small>
             </div>
             <div>
               <label for="source-mode">Работа с источником</label>
@@ -109,10 +127,10 @@
 
           <fieldset class="quick-options">
             <legend>Быстрые параметры</legend>
-            <label><input type="checkbox" id="formulas"> Сохранить формулы</label>
-            <label><input type="checkbox" id="terms"> Выделить определения</label>
-            <label><input type="checkbox" id="homework"> Найти ДЗ</label>
-            <label><input type="checkbox" id="questions"> Добавить вопросы</label>
+            <label class="chip"><input type="checkbox" id="formulas"><span>Сохранить формулы</span></label>
+            <label class="chip"><input type="checkbox" id="terms"><span>Выделить определения</span></label>
+            <label class="chip"><input type="checkbox" id="homework"><span>Найти ДЗ</span></label>
+            <label class="chip"><input type="checkbox" id="questions"><span>Добавить вопросы</span></label>
           </fieldset>
 
           <button class="button" type="submit">Сформировать промпт</button>
@@ -123,41 +141,83 @@
     <section id="templates" class="section">
       <div class="container">
         <h2>2. Или выбери готовый шаблон</h2>
-        <p class="subtitle">Шаблон необязателен. Он подставляет готовые параметры, которые можно изменить вручную.</p>
+        <p class="subtitle">Карточка показывает только главное. Готовые настройки применяются после выбора и могут быть изменены.</p>
         <div class="cards">
           <article class="card">
-            <h3>Подробный конспект</h3>
-            <p>Темы, пояснения, примеры и важные детали.</p>
+            <div class="card-top">
+              <span class="card-icon" aria-hidden="true">ПО</span>
+              <div class="card-copy">
+                <h3>Подробный конспект</h3>
+                <p>Темы, пояснения, примеры и важные детали.</p>
+              </div>
+            </div>
+            <div class="card-tags" aria-label="Темы шаблона"><span>конспект</span><span>подробно</span></div>
             <button class="choose-template" type="button" data-goal="Подробный конспект" data-detail="Подробная" data-formulas="true" data-terms="true" data-homework="true" aria-pressed="false">Выбрать</button>
           </article>
           <article class="card">
-            <h3>Краткое резюме</h3>
-            <p>Главные тезисы без лишней информации.</p>
+            <div class="card-top">
+              <span class="card-icon" aria-hidden="true">КР</span>
+              <div class="card-copy">
+                <h3>Краткое резюме</h3>
+                <p>Главные тезисы без лишней информации.</p>
+              </div>
+            </div>
+            <div class="card-tags" aria-label="Темы шаблона"><span>кратко</span><span>тезисы</span></div>
             <button class="choose-template" type="button" data-goal="Краткое резюме" data-detail="Краткая" aria-pressed="false">Выбрать</button>
           </article>
           <article class="card">
-            <h3>Термины и определения</h3>
-            <p>Основные понятия по исходному материалу.</p>
+            <div class="card-top">
+              <span class="card-icon" aria-hidden="true">ТЕ</span>
+              <div class="card-copy">
+                <h3>Термины и определения</h3>
+                <p>Основные понятия по исходному материалу.</p>
+              </div>
+            </div>
+            <div class="card-tags" aria-label="Темы шаблона"><span>термины</span><span>источник</span></div>
             <button class="choose-template" type="button" data-goal="Термины и определения" data-detail="Средняя" data-extra="Термины и определения" aria-pressed="false">Выбрать</button>
           </article>
           <article class="card">
-            <h3>Формулы и алгоритмы</h3>
-            <p>Формулы, обозначения и порядок действий.</p>
+            <div class="card-top">
+              <span class="card-icon" aria-hidden="true">ФО</span>
+              <div class="card-copy">
+                <h3>Формулы и алгоритмы</h3>
+                <p>Формулы, обозначения и порядок действий.</p>
+              </div>
+            </div>
+            <div class="card-tags" aria-label="Темы шаблона"><span>формулы</span><span>алгоритм</span></div>
             <button class="choose-template" type="button" data-goal="Формулы и алгоритмы" data-detail="Средняя" data-extra="Формулы и алгоритмы" aria-pressed="false">Выбрать</button>
           </article>
           <article class="card">
-            <h3>Домашнее задание</h3>
-            <p>Задания, сроки и требования преподавателя.</p>
+            <div class="card-top">
+              <span class="card-icon" aria-hidden="true">ДО</span>
+              <div class="card-copy">
+                <h3>Домашнее задание</h3>
+                <p>Задания, сроки и требования преподавателя.</p>
+              </div>
+            </div>
+            <div class="card-tags" aria-label="Темы шаблона"><span>ДЗ</span><span>важно</span></div>
             <button class="choose-template" type="button" data-goal="Домашнее задание" data-detail="Средняя" data-extra="Домашнее задание" aria-pressed="false">Выбрать</button>
           </article>
           <article class="card">
-            <h3>Карточки Anki</h3>
-            <p>Вопросы и ответы для повторения.</p>
+            <div class="card-top">
+              <span class="card-icon" aria-hidden="true">КА</span>
+              <div class="card-copy">
+                <h3>Карточки Anki</h3>
+                <p>Вопросы и ответы для повторения.</p>
+              </div>
+            </div>
+            <div class="card-tags" aria-label="Темы шаблона"><span>карточки</span><span>повторение</span></div>
             <button class="choose-template" type="button" data-goal="Карточки Anki" data-detail="Краткая" data-terms="true" aria-pressed="false">Выбрать</button>
           </article>
           <article class="card">
-            <h3>Самопроверка</h3>
-            <p>Контрольные вопросы по материалу.</p>
+            <div class="card-top">
+              <span class="card-icon" aria-hidden="true">СА</span>
+              <div class="card-copy">
+                <h3>Самопроверка</h3>
+                <p>Контрольные вопросы по материалу.</p>
+              </div>
+            </div>
+            <div class="card-tags" aria-label="Темы шаблона"><span>тест</span><span>вопросы</span></div>
             <button class="choose-template" type="button" data-goal="Самопроверка" data-detail="Средняя" data-questions="true" aria-pressed="false">Выбрать</button>
           </article>
         </div>
@@ -172,8 +232,10 @@
             <p id="result-status" role="status">Пока промпт не сформирован.</p>
             <label for="prompt-output">Текст промпта</label>
             <textarea id="prompt-output" rows="10" readonly placeholder="Заполни форму и нажми «Сформировать промпт»."></textarea>
-            <button class="button" type="button" id="copy-button" disabled>Скопировать промпт</button>
-            <a class="plain-link" href="#builder">Изменить настройки</a>
+            <div class="result-actions">
+              <button class="button" type="button" id="copy-button" disabled>Скопировать промпт</button>
+              <a class="plain-link" href="#builder">Изменить настройки</a>
+            </div>
             <p class="small-text">Скопируй текст в нейросеть и отдельно прикрепи исходный учебный файл.</p>
           </div>
           <aside class="checklist">

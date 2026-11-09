@@ -109,12 +109,16 @@ const templateCount = document.querySelector("#template-count");
 const templateEmpty = document.querySelector("#template-empty");
 const resetTemplateFilters = document.querySelector("#reset-template-filters");
 
+function normalizeSearchText(text) {
+  return text.trim().replace(/\s+/g, " ").toLocaleLowerCase("ru");
+}
+
 function applyFilters() {
-  const query = templateSearch.value.trim().toLocaleLowerCase("ru");
+  const query = normalizeSearchText(templateSearch.value);
   const category = templateCategory.value;
   let visibleCount = 0;
   templateCards.forEach((card) => {
-    const title = card.querySelector("h3").textContent.toLocaleLowerCase("ru");
+    const title = normalizeSearchText(card.querySelector("h3").textContent);
     const matchesText = title.includes(query);
     const matchesCategory = category === "all" || card.dataset.category === category;
     card.hidden = !(matchesText && matchesCategory);
@@ -148,3 +152,19 @@ templateCards.forEach((card) => {
   });
 });
 document.querySelector("#close-template-dialog").addEventListener("click", () => templateDialog.close());
+
+// Нативный dialog блокирует фон, но Tab на границе может уйти в интерфейс браузера.
+// Замыкаем цикл на доступных элементах окна, сохраняя стандартное закрытие Escape.
+templateDialog.addEventListener("keydown", (event) => {
+  if (event.key !== "Tab") return;
+  const controls = Array.from(templateDialog.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  )).filter((element) => !element.disabled && element.tabIndex >= 0 && element.getClientRects().length > 0);
+  const first = controls[0];
+  const last = controls[controls.length - 1];
+  if (first && ((event.shiftKey && document.activeElement === first) ||
+      (!event.shiftKey && document.activeElement === last))) {
+    event.preventDefault();
+    (event.shiftKey ? last : first).focus();
+  }
+});

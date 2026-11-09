@@ -28,6 +28,14 @@ jobs:
           python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/hw5-http.log 2>&1 &
           sleep 2
           node tests/hw5-browser.mjs
+      - name: Prepare MP4 version of real browser demo
+        if: success()
+        run: |
+          if command -v ffmpeg >/dev/null 2>&1; then
+            ffmpeg -y -hide_banner -loglevel error -i evidence/hw5_generated/hw5_demo.webm -c:v libx264 -preset veryfast -crf 25 -pix_fmt yuv420p -movflags +faststart evidence/hw5_generated/hw5_demo.mp4
+          else
+            echo "ffmpeg unavailable, keeping original WebM demo"
+          fi
       - name: Upload screenshots and report
         if: always()
         uses: actions/upload-artifact@v4
@@ -35,3 +43,22 @@ jobs:
           name: lectureflow-hw5-browser-qa
           path: evidence/hw5_generated/
           if-no-files-found: warn
+      - name: Upload complete source files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lectureflow-hw5-source
+          path: |
+            index.html
+            README.md
+            css/
+            js/
+            data/
+            assets/
+            ai-log.md
+            HW5_SUBMISSION.md
+            tests/
+            evidence/HW5_QA.md
+            .github/workflows/hw5-qa.yml
+          include-hidden-files: true
+          if-no-files-found: error

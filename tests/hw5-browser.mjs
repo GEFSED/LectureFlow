@@ -42,7 +42,7 @@ try {
   await check("Search and category are applied together", async () => {
     await page.selectOption("#template-category", "review");
     assert.equal((await visibleTitles(page)).length, 0);
-    assert.isTrue ? assert.isTrue(await page.locator("#templates-empty").isVisible()) : assert.equal(await page.locator("#templates-empty").isVisible(), true);
+    assert.equal(await page.locator("#templates-empty").isVisible(), true);
     await page.selectOption("#template-category", "notes");
     assert.deepEqual(await visibleTitles(page), ["Подробный конспект"]);
   });

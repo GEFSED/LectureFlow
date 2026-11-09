@@ -5,6 +5,81 @@ const output = document.getElementById("prompt-output");
 const status = document.getElementById("result-status");
 const copyButton = document.getElementById("copy-button");
 
+// ДЗ №5: поиск и категория управляют одним и тем же каталогом из семи карточек.
+// Обработчики назначаются один раз; applyFilters() только пересчитывает видимость.
+const templateSearch = document.getElementById("template-search");
+const templateCategory = document.getElementById("template-category");
+const templateCount = document.getElementById("template-count");
+const templatesEmpty = document.getElementById("templates-empty");
+const templateCards = document.querySelectorAll("#templates .card");
+const resetTemplates = document.getElementById("reset-templates");
+
+function applyFilters() {
+  const query = templateSearch.value.trim().toLowerCase();
+  const category = templateCategory.value;
+  let visibleCount = 0;
+
+  templateCards.forEach(function (card) {
+    const title = card.querySelector("h3").textContent.toLowerCase();
+    const matchesText = title.includes(query);
+    const matchesCategory = category === "all" || card.dataset.category === category;
+    card.hidden = !(matchesText && matchesCategory);
+    if (!card.hidden) visibleCount += 1;
+  });
+
+  templateCount.textContent = "Найдено шаблонов: " + visibleCount + " из " + templateCards.length;
+  templatesEmpty.hidden = visibleCount !== 0;
+}
+
+templateSearch.addEventListener("input", applyFilters);
+templateCategory.addEventListener("change", applyFilters);
+resetTemplates.addEventListener("click", function () {
+  templateSearch.value = "";
+  templateCategory.value = "all";
+  applyFilters();
+  templateSearch.focus();
+});
+applyFilters();
+
+// Одно нативное модальное окно; содержимое берётся из нажатой карточки.
+const templateDialog = document.getElementById("template-details");
+const detailsCategory = document.getElementById("template-details-category");
+const detailsTitle = document.getElementById("template-details-title");
+const detailsSummary = document.getElementById("template-details-summary");
+const detailsText = document.getElementById("template-details-text");
+const detailsApply = document.getElementById("template-details-apply");
+const detailsClose = document.getElementById("template-details-close");
+const templateCategoryNames = {
+  notes: "Конспекты и резюме",
+  analysis: "Разбор материала",
+  review: "Повторение"
+};
+let openedTemplateCard = null;
+
+templateCards.forEach(function (card) {
+  card.querySelector(".show-template-details").addEventListener("click", function () {
+    openedTemplateCard = card;
+    detailsCategory.textContent = templateCategoryNames[card.dataset.category];
+    detailsTitle.textContent = card.querySelector("h3").textContent;
+    detailsSummary.textContent = card.querySelector(".card-copy p").textContent;
+    detailsText.textContent = card.dataset.details;
+    templateDialog.showModal();
+  });
+});
+
+detailsClose.addEventListener("click", function () {
+  templateDialog.close();
+});
+detailsApply.addEventListener("click", function () {
+  if (!openedTemplateCard) return;
+  const chosenCard = openedTemplateCard;
+  templateDialog.close();
+  chosenCard.querySelector(".choose-template").click();
+});
+templateDialog.addEventListener("close", function () {
+  openedTemplateCard = null;
+});
+
 // Выбор шаблона заполняет поля формы готовыми параметрами.
 document.querySelectorAll(".choose-template").forEach(function (button) {
   button.addEventListener("click", function () {
@@ -20,11 +95,11 @@ document.querySelectorAll(".choose-template").forEach(function (button) {
     document.querySelectorAll(".choose-template").forEach(function (item) {
       item.textContent = "Выбрать";
       item.setAttribute("aria-pressed", "false");
-      item.parentElement.classList.remove("selected");
+      item.closest(".card").classList.remove("selected");
     });
     button.textContent = "Выбрано";
     button.setAttribute("aria-pressed", "true");
-    button.parentElement.classList.add("selected");
+    button.closest(".card").classList.add("selected");
 
     const message = "Применён шаблон «" + goal.value + "». Выбери тип материала, проверь параметры и сформируй промпт.";
     document.getElementById("builder-message").textContent = message;

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LectureFlow — конструктор учебных промптов</title>
   <meta name="description" content="Конструктор учебных промптов: выбери материал, настрой задачу и получи запрос для внешней нейросети.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
 </head>
@@ -142,8 +143,26 @@
       <div class="container">
         <h2>2. Или выбери готовый шаблон</h2>
         <p class="subtitle">Карточка показывает только главное. Готовые настройки применяются после выбора и могут быть изменены.</p>
+        <div class="template-filters" role="search" aria-label="Поиск учебных шаблонов">
+          <div class="template-filter-field">
+            <label for="template-search">Поиск шаблона</label>
+            <input id="template-search" type="search" placeholder="Например, конспект" autocomplete="off">
+          </div>
+          <div class="template-filter-field">
+            <label for="template-category">Категория</label>
+            <select id="template-category">
+              <option value="all">Все категории</option>
+              <option value="notes">Конспекты</option>
+              <option value="study">Изучение материала</option>
+              <option value="practice">Практика и проверка</option>
+            </select>
+          </div>
+          <button type="button" id="reset-template-filters" class="template-reset">Сбросить</button>
+        </div>
+        <p id="template-count" class="template-count" role="status" aria-live="polite">Найдено: 7</p>
+        <p id="template-empty" class="template-empty" hidden>Ничего не найдено. Измени запрос или категорию.</p>
         <div class="cards">
-          <article class="card">
+          <article class="card" data-category="notes">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">ПО</span>
               <div class="card-copy">
@@ -153,8 +172,9 @@
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>конспект</span><span>подробно</span></div>
             <button class="choose-template" type="button" data-goal="Подробный конспект" data-detail="Подробная" data-formulas="true" data-terms="true" data-homework="true" aria-pressed="false">Выбрать</button>
+            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
           </article>
-          <article class="card">
+          <article class="card" data-category="notes">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">КР</span>
               <div class="card-copy">
@@ -164,8 +184,9 @@
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>кратко</span><span>тезисы</span></div>
             <button class="choose-template" type="button" data-goal="Краткое резюме" data-detail="Краткая" aria-pressed="false">Выбрать</button>
+            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
           </article>
-          <article class="card">
+          <article class="card" data-category="study">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">ТЕ</span>
               <div class="card-copy">
@@ -175,8 +196,9 @@
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>термины</span><span>источник</span></div>
             <button class="choose-template" type="button" data-goal="Термины и определения" data-detail="Средняя" data-extra="Термины и определения" aria-pressed="false">Выбрать</button>
+            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
           </article>
-          <article class="card">
+          <article class="card" data-category="study">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">ФО</span>
               <div class="card-copy">
@@ -186,8 +208,9 @@
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>формулы</span><span>алгоритм</span></div>
             <button class="choose-template" type="button" data-goal="Формулы и алгоритмы" data-detail="Средняя" data-extra="Формулы и алгоритмы" aria-pressed="false">Выбрать</button>
+            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
           </article>
-          <article class="card">
+          <article class="card" data-category="practice">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">ДО</span>
               <div class="card-copy">
@@ -197,8 +220,9 @@
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>ДЗ</span><span>важно</span></div>
             <button class="choose-template" type="button" data-goal="Домашнее задание" data-detail="Средняя" data-extra="Домашнее задание" aria-pressed="false">Выбрать</button>
+            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
           </article>
-          <article class="card">
+          <article class="card" data-category="practice">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">КА</span>
               <div class="card-copy">
@@ -208,8 +232,9 @@
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>карточки</span><span>повторение</span></div>
             <button class="choose-template" type="button" data-goal="Карточки Anki" data-detail="Краткая" data-terms="true" aria-pressed="false">Выбрать</button>
+            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
           </article>
-          <article class="card">
+          <article class="card" data-category="practice">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">СА</span>
               <div class="card-copy">
@@ -219,10 +244,20 @@
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>тест</span><span>вопросы</span></div>
             <button class="choose-template" type="button" data-goal="Самопроверка" data-detail="Средняя" data-questions="true" aria-pressed="false">Выбрать</button>
+            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
           </article>
         </div>
       </div>
     </section>
+
+    <dialog id="template-dialog" class="template-dialog" aria-labelledby="template-dialog-title">
+      <div class="template-dialog-inner">
+        <h2 id="template-dialog-title"></h2>
+        <p id="template-dialog-description"></p>
+        <p id="template-dialog-category" class="template-dialog-category"></p>
+        <button type="button" id="close-template-dialog" class="button">Закрыть</button>
+      </div>
+    </dialog>
 
     <section id="result" class="section white-section">
       <div class="container">

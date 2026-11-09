@@ -99,3 +99,72 @@ document.getElementById("source-file").addEventListener("change", function (even
     ? "Выбран: " + file.name + ". Не забудь приложить файл во внешней нейросети."
     : "Файл не выбран. Приложи источник к запросу во внешней нейросети.";
 });
+
+
+// ДЗ №5. Поиск и категория — единый пересчёт списка шаблонов.
+const templateSearch = document.querySelector("#template-search");
+const templateCategory = document.querySelector("#template-category");
+const templateCards = document.querySelectorAll("#templates .card");
+const templateCount = document.querySelector("#template-count");
+const templateEmpty = document.querySelector("#template-empty");
+const resetTemplateFilters = document.querySelector("#reset-template-filters");
+
+function normalizeSearchText(text) {
+  return text.trim().replace(/\s+/g, " ").toLocaleLowerCase("ru");
+}
+
+function applyFilters() {
+  const query = normalizeSearchText(templateSearch.value);
+  const category = templateCategory.value;
+  let visibleCount = 0;
+  templateCards.forEach((card) => {
+    const title = normalizeSearchText(card.querySelector("h3").textContent);
+    const matchesText = title.includes(query);
+    const matchesCategory = category === "all" || card.dataset.category === category;
+    card.hidden = !(matchesText && matchesCategory);
+    if (!card.hidden) visibleCount += 1;
+  });
+  templateCount.textContent = `Найдено: ${visibleCount}`;
+  templateEmpty.hidden = visibleCount !== 0;
+}
+templateSearch.addEventListener("input", applyFilters);
+templateCategory.addEventListener("change", applyFilters);
+resetTemplateFilters.addEventListener("click", () => {
+  templateSearch.value = "";
+  templateCategory.value = "all";
+  applyFilters();
+  templateSearch.focus();
+});
+applyFilters();
+
+// ДЗ №5. Одно нативное модальное окно для подробностей всех семи шаблонов.
+const templateDialog = document.querySelector("#template-dialog");
+const templateDialogTitle = document.querySelector("#template-dialog-title");
+const templateDialogDescription = document.querySelector("#template-dialog-description");
+const templateDialogCategory = document.querySelector("#template-dialog-category");
+const categoryNames = { notes: "Конспекты", study: "Изучение материала", practice: "Практика и проверка" };
+templateCards.forEach((card) => {
+  card.querySelector(".template-details").addEventListener("click", () => {
+    templateDialogTitle.textContent = card.querySelector("h3").textContent;
+    templateDialogDescription.textContent = card.querySelector(".card-copy p").textContent;
+    templateDialogCategory.textContent = "Категория: " + (categoryNames[card.dataset.category] || "Без категории");
+    templateDialog.showModal();
+  });
+});
+document.querySelector("#close-template-dialog").addEventListener("click", () => templateDialog.close());
+
+// Нативный dialog блокирует фон, но Tab на границе может уйти в интерфейс браузера.
+// Замыкаем цикл на доступных элементах окна, сохраняя стандартное закрытие Escape.
+templateDialog.addEventListener("keydown", (event) => {
+  if (event.key !== "Tab") return;
+  const controls = Array.from(templateDialog.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  )).filter((element) => !element.disabled && element.tabIndex >= 0 && element.getClientRects().length > 0);
+  const first = controls[0];
+  const last = controls[controls.length - 1];
+  if (first && ((event.shiftKey && document.activeElement === first) ||
+      (!event.shiftKey && document.activeElement === last))) {
+    event.preventDefault();
+    (event.shiftKey ? last : first).focus();
+  }
+});

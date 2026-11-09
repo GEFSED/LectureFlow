@@ -137,6 +137,37 @@ try {
     });
   }
 
+  // Short real-browser screen recording to accompany the assignment.
+  await check("Generate demonstration video", async () => {
+    const demoContext = await browser.newContext({
+      viewport: { width: 1280, height: 720 },
+      recordVideo: { dir: outDir, size: { width: 1280, height: 720 } }
+    });
+    const demo = await demoContext.newPage();
+    await demo.goto(baseURL, { waitUntil: "load" });
+    await demo.locator("#templates").scrollIntoViewIfNeeded();
+    await demo.waitForTimeout(700);
+    await demo.locator("#template-search").fill("конспект");
+    await demo.waitForTimeout(800);
+    await demo.selectOption("#template-category", "review");
+    await demo.waitForTimeout(800);
+    await demo.locator("#reset-templates").click();
+    await demo.selectOption("#template-category", "analysis");
+    await demo.waitForTimeout(700);
+    await demo.getByRole("button", { name: "Подробнее о шаблоне «Домашнее задание»" }).click();
+    await demo.waitForTimeout(1200);
+    await demo.keyboard.press("Escape");
+    await demo.getByRole("button", { name: "Подробнее о шаблоне «Формулы и алгоритмы»" }).click();
+    await demo.waitForTimeout(800);
+    await demo.locator("#template-details-apply").click();
+    await demo.waitForTimeout(700);
+    await demo.selectOption("#material", { label: "PDF" });
+    await demo.locator('#prompt-form button[type="submit"]').click();
+    await demo.waitForTimeout(1300);
+    await demoContext.close();
+    await demo.video().saveAs(outDir + "/hw5_demo.webm");
+  });
+
   await check("No critical JavaScript/Console errors", async () => {
     assert.deepEqual(pageErrors, []);
   });

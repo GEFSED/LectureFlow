@@ -142,8 +142,25 @@
       <div class="container">
         <h2>2. Или выбери готовый шаблон</h2>
         <p class="subtitle">Карточка показывает только главное. Готовые настройки применяются после выбора и могут быть изменены.</p>
+        <div class="template-controls" role="search" aria-label="Поиск и фильтрация учебных шаблонов">
+          <div class="template-control">
+            <label for="template-search">Поиск по названию</label>
+            <input id="template-search" type="search" placeholder="Например, конспект" autocomplete="off" aria-describedby="template-count">
+          </div>
+          <div class="template-control">
+            <label for="template-category">Категория</label>
+            <select id="template-category">
+              <option value="all">Все категории</option>
+              <option value="notes">Конспекты и резюме</option>
+              <option value="analysis">Разбор материала</option>
+              <option value="review">Повторение</option>
+            </select>
+          </div>
+          <button id="reset-templates" class="template-reset" type="button">Сбросить</button>
+        </div>
+        <p id="template-count" class="template-count" role="status" aria-live="polite">Найдено шаблонов: 7 из 7</p>
         <div class="cards">
-          <article class="card">
+          <article class="card" data-category="notes" data-details="Для объёмной лекции или стенограммы: разделы по темам, определения, примеры и важные подробности. После выбора проверь тип материала и добавь исходный файл во внешней нейросети.">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">ПО</span>
               <div class="card-copy">
@@ -152,9 +169,12 @@
               </div>
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>конспект</span><span>подробно</span></div>
+            <div class="card-actions">
             <button class="choose-template" type="button" data-goal="Подробный конспект" data-detail="Подробная" data-formulas="true" data-terms="true" data-homework="true" aria-pressed="false">Выбрать</button>
+              <button class="show-template-details" type="button" aria-label="Подробнее о шаблоне «Подробный конспект»">Подробнее</button>
+            </div>
           </article>
-          <article class="card">
+          <article class="card" data-category="notes" data-details="Для быстрого повторения материала: основные идеи и главные выводы без избыточных деталей. Можно изменить подробность перед созданием промпта.">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">КР</span>
               <div class="card-copy">
@@ -163,9 +183,12 @@
               </div>
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>кратко</span><span>тезисы</span></div>
+            <div class="card-actions">
             <button class="choose-template" type="button" data-goal="Краткое резюме" data-detail="Краткая" aria-pressed="false">Выбрать</button>
+              <button class="show-template-details" type="button" aria-label="Подробнее о шаблоне «Краткое резюме»">Подробнее</button>
+            </div>
           </article>
-          <article class="card">
+          <article class="card" data-category="analysis" data-details="Для выделения ключевых понятий: попроси нейросеть перечислить термины, дать определения и опираться на выбранный источник.">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">ТЕ</span>
               <div class="card-copy">
@@ -174,9 +197,12 @@
               </div>
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>термины</span><span>источник</span></div>
+            <div class="card-actions">
             <button class="choose-template" type="button" data-goal="Термины и определения" data-detail="Средняя" data-extra="Термины и определения" aria-pressed="false">Выбрать</button>
+              <button class="show-template-details" type="button" aria-label="Подробнее о шаблоне «Термины и определения»">Подробнее</button>
+            </div>
           </article>
-          <article class="card">
+          <article class="card" data-category="analysis" data-details="Для технических лекций: выписать формулы, расшифровать обозначения и последовательно объяснить алгоритмы без вымышленных данных.">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">ФО</span>
               <div class="card-copy">
@@ -185,9 +211,12 @@
               </div>
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>формулы</span><span>алгоритм</span></div>
+            <div class="card-actions">
             <button class="choose-template" type="button" data-goal="Формулы и алгоритмы" data-detail="Средняя" data-extra="Формулы и алгоритмы" aria-pressed="false">Выбрать</button>
+              <button class="show-template-details" type="button" aria-label="Подробнее о шаблоне «Формулы и алгоритмы»">Подробнее</button>
+            </div>
           </article>
-          <article class="card">
+          <article class="card" data-category="analysis" data-details="Для лекций со словами преподавателя: выделить условия заданий, сроки и критерии сдачи, отметить отсутствующие в источнике сведения.">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">ДО</span>
               <div class="card-copy">
@@ -196,9 +225,12 @@
               </div>
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>ДЗ</span><span>важно</span></div>
+            <div class="card-actions">
             <button class="choose-template" type="button" data-goal="Домашнее задание" data-detail="Средняя" data-extra="Домашнее задание" aria-pressed="false">Выбрать</button>
+              <button class="show-template-details" type="button" aria-label="Подробнее о шаблоне «Домашнее задание»">Подробнее</button>
+            </div>
           </article>
-          <article class="card">
+          <article class="card" data-category="review" data-details="Для закрепления материала: сформировать короткие карточки «вопрос — ответ», которые затем можно перенести в Anki.">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">КА</span>
               <div class="card-copy">
@@ -207,9 +239,12 @@
               </div>
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>карточки</span><span>повторение</span></div>
+            <div class="card-actions">
             <button class="choose-template" type="button" data-goal="Карточки Anki" data-detail="Краткая" data-terms="true" aria-pressed="false">Выбрать</button>
+              <button class="show-template-details" type="button" aria-label="Подробнее о шаблоне «Карточки Anki»">Подробнее</button>
+            </div>
           </article>
-          <article class="card">
+          <article class="card" data-category="review" data-details="Для подготовки к зачёту: составить контрольные вопросы с ответами по материалу и проверить понимание ключевых тем.">
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">СА</span>
               <div class="card-copy">
@@ -218,9 +253,25 @@
               </div>
             </div>
             <div class="card-tags" aria-label="Темы шаблона"><span>тест</span><span>вопросы</span></div>
+            <div class="card-actions">
             <button class="choose-template" type="button" data-goal="Самопроверка" data-detail="Средняя" data-questions="true" aria-pressed="false">Выбрать</button>
+              <button class="show-template-details" type="button" aria-label="Подробнее о шаблоне «Самопроверка»">Подробнее</button>
+            </div>
           </article>
         </div>
+        <p id="templates-empty" class="templates-empty" hidden>По вашему запросу шаблонов нет. Измените запрос, категорию или нажмите «Сбросить».</p>
+        <dialog id="template-details" class="template-dialog" aria-labelledby="template-details-title">
+          <div class="template-dialog-content">
+            <p id="template-details-category" class="template-dialog-category"></p>
+            <h2 id="template-details-title"></h2>
+            <p id="template-details-summary" class="template-dialog-summary"></p>
+            <p id="template-details-text"></p>
+            <div class="template-dialog-actions">
+              <button id="template-details-apply" class="button" type="button">Выбрать шаблон</button>
+              <button id="template-details-close" class="template-dialog-close" type="button">Закрыть</button>
+            </div>
+          </div>
+        </dialog>
       </div>
     </section>
 

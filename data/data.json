@@ -1,4 +1,156 @@
-{
-  "description": "В ДЗ №3 карточки записаны прямо в HTML. Файл оставлен для следующих занятий.",
-  "templates": []
-}
+[
+  {
+    "id": 1,
+    "title": "Подробный конспект",
+    "category": "notes",
+    "description": "Темы, пояснения, примеры и важные детали.",
+    "tags": [
+      "конспект",
+      "подробно"
+    ],
+    "image": null,
+    "link": null,
+    "icon": "ПО",
+    "preset": {
+      "goal": "Подробный конспект",
+      "detail": "Подробная",
+      "extra": "Без дополнительных разделов",
+      "formulas": true,
+      "terms": true,
+      "homework": true,
+      "questions": false
+    }
+  },
+  {
+    "id": 2,
+    "title": "Краткое резюме",
+    "category": "notes",
+    "description": "Главные тезисы без лишней информации.",
+    "tags": [
+      "кратко",
+      "тезисы"
+    ],
+    "image": null,
+    "link": null,
+    "icon": "КР",
+    "preset": {
+      "goal": "Краткое резюме",
+      "detail": "Краткая",
+      "extra": "Без дополнительных разделов",
+      "formulas": false,
+      "terms": false,
+      "homework": false,
+      "questions": false
+    }
+  },
+  {
+    "id": 3,
+    "title": "Термины и определения",
+    "category": "study",
+    "description": "Основные понятия по исходному материалу.",
+    "tags": [
+      "термины",
+      "источник"
+    ],
+    "image": null,
+    "link": null,
+    "icon": "ТЕ",
+    "preset": {
+      "goal": "Термины и определения",
+      "detail": "Средняя",
+      "extra": "Термины и определения",
+      "formulas": false,
+      "terms": false,
+      "homework": false,
+      "questions": false
+    }
+  },
+  {
+    "id": 4,
+    "title": "Формулы и алгоритмы",
+    "category": "study",
+    "description": "Формулы, обозначения и порядок действий.",
+    "tags": [
+      "формулы",
+      "алгоритм"
+    ],
+    "image": null,
+    "link": null,
+    "icon": "ФО",
+    "preset": {
+      "goal": "Формулы и алгоритмы",
+      "detail": "Средняя",
+      "extra": "Формулы и алгоритмы",
+      "formulas": false,
+      "terms": false,
+      "homework": false,
+      "questions": false
+    }
+  },
+  {
+    "id": 5,
+    "title": "Домашнее задание",
+    "category": "practice",
+    "description": "Задания, сроки и требования преподавателя.",
+    "tags": [
+      "ДЗ",
+      "важно"
+    ],
+    "image": null,
+    "link": null,
+    "icon": "ДО",
+    "preset": {
+      "goal": "Домашнее задание",
+      "detail": "Средняя",
+      "extra": "Домашнее задание",
+      "formulas": false,
+      "terms": false,
+      "homework": false,
+      "questions": false
+    }
+  },
+  {
+    "id": 6,
+    "title": "Карточки Anki",
+    "category": "practice",
+    "description": "Вопросы и ответы для повторения.",
+    "tags": [
+      "карточки",
+      "повторение"
+    ],
+    "image": null,
+    "link": null,
+    "icon": "КА",
+    "preset": {
+      "goal": "Карточки Anki",
+      "detail": "Краткая",
+      "extra": "Без дополнительных разделов",
+      "formulas": false,
+      "terms": true,
+      "homework": false,
+      "questions": false
+    }
+  },
+  {
+    "id": 7,
+    "title": "Самопроверка",
+    "category": "practice",
+    "description": "Контрольные вопросы по материалу.",
+    "tags": [
+      "тест",
+      "вопросы"
+    ],
+    "image": null,
+    "link": null,
+    "icon": "СА",
+    "preset": {
+      "goal": "Самопроверка",
+      "detail": "Средняя",
+      "extra": "Без дополнительных разделов",
+      "formulas": false,
+      "terms": false,
+      "homework": false,
+      "questions": true
+    }
+  }
+]

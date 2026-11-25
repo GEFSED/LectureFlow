@@ -159,94 +159,14 @@
           </div>
           <button type="button" id="reset-template-filters" class="template-reset">Сбросить</button>
         </div>
-        <p id="template-count" class="template-count" role="status" aria-live="polite">Найдено: 7</p>
+        <p id="template-count" class="template-count" role="status" aria-live="polite">Загрузка…</p>
         <p id="template-empty" class="template-empty" hidden>Ничего не найдено. Измени запрос или категорию.</p>
-        <div class="cards">
-          <article class="card" data-category="notes">
-            <div class="card-top">
-              <span class="card-icon" aria-hidden="true">ПО</span>
-              <div class="card-copy">
-                <h3>Подробный конспект</h3>
-                <p>Темы, пояснения, примеры и важные детали.</p>
-              </div>
-            </div>
-            <div class="card-tags" aria-label="Темы шаблона"><span>конспект</span><span>подробно</span></div>
-            <button class="choose-template" type="button" data-goal="Подробный конспект" data-detail="Подробная" data-formulas="true" data-terms="true" data-homework="true" aria-pressed="false">Выбрать</button>
-            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
-          </article>
-          <article class="card" data-category="notes">
-            <div class="card-top">
-              <span class="card-icon" aria-hidden="true">КР</span>
-              <div class="card-copy">
-                <h3>Краткое резюме</h3>
-                <p>Главные тезисы без лишней информации.</p>
-              </div>
-            </div>
-            <div class="card-tags" aria-label="Темы шаблона"><span>кратко</span><span>тезисы</span></div>
-            <button class="choose-template" type="button" data-goal="Краткое резюме" data-detail="Краткая" aria-pressed="false">Выбрать</button>
-            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
-          </article>
-          <article class="card" data-category="study">
-            <div class="card-top">
-              <span class="card-icon" aria-hidden="true">ТЕ</span>
-              <div class="card-copy">
-                <h3>Термины и определения</h3>
-                <p>Основные понятия по исходному материалу.</p>
-              </div>
-            </div>
-            <div class="card-tags" aria-label="Темы шаблона"><span>термины</span><span>источник</span></div>
-            <button class="choose-template" type="button" data-goal="Термины и определения" data-detail="Средняя" data-extra="Термины и определения" aria-pressed="false">Выбрать</button>
-            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
-          </article>
-          <article class="card" data-category="study">
-            <div class="card-top">
-              <span class="card-icon" aria-hidden="true">ФО</span>
-              <div class="card-copy">
-                <h3>Формулы и алгоритмы</h3>
-                <p>Формулы, обозначения и порядок действий.</p>
-              </div>
-            </div>
-            <div class="card-tags" aria-label="Темы шаблона"><span>формулы</span><span>алгоритм</span></div>
-            <button class="choose-template" type="button" data-goal="Формулы и алгоритмы" data-detail="Средняя" data-extra="Формулы и алгоритмы" aria-pressed="false">Выбрать</button>
-            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
-          </article>
-          <article class="card" data-category="practice">
-            <div class="card-top">
-              <span class="card-icon" aria-hidden="true">ДО</span>
-              <div class="card-copy">
-                <h3>Домашнее задание</h3>
-                <p>Задания, сроки и требования преподавателя.</p>
-              </div>
-            </div>
-            <div class="card-tags" aria-label="Темы шаблона"><span>ДЗ</span><span>важно</span></div>
-            <button class="choose-template" type="button" data-goal="Домашнее задание" data-detail="Средняя" data-extra="Домашнее задание" aria-pressed="false">Выбрать</button>
-            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
-          </article>
-          <article class="card" data-category="practice">
-            <div class="card-top">
-              <span class="card-icon" aria-hidden="true">КА</span>
-              <div class="card-copy">
-                <h3>Карточки Anki</h3>
-                <p>Вопросы и ответы для повторения.</p>
-              </div>
-            </div>
-            <div class="card-tags" aria-label="Темы шаблона"><span>карточки</span><span>повторение</span></div>
-            <button class="choose-template" type="button" data-goal="Карточки Anki" data-detail="Краткая" data-terms="true" aria-pressed="false">Выбрать</button>
-            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
-          </article>
-          <article class="card" data-category="practice">
-            <div class="card-top">
-              <span class="card-icon" aria-hidden="true">СА</span>
-              <div class="card-copy">
-                <h3>Самопроверка</h3>
-                <p>Контрольные вопросы по материалу.</p>
-              </div>
-            </div>
-            <div class="card-tags" aria-label="Темы шаблона"><span>тест</span><span>вопросы</span></div>
-            <button class="choose-template" type="button" data-goal="Самопроверка" data-detail="Средняя" data-questions="true" aria-pressed="false">Выбрать</button>
-            <button class="template-details" type="button" aria-label="Подробнее о шаблоне">Подробнее</button>
-          </article>
+        <p id="template-loading" class="template-loading" role="status" aria-live="polite">Загрузка шаблонов…</p>
+        <div id="template-load-error" class="template-load-error" role="alert" hidden>
+          <p id="template-load-error-text">Не удалось загрузить шаблоны.</p>
+          <button id="retry-template-load" class="template-reset" type="button">Повторить загрузку</button>
         </div>
+        <div class="cards" id="template-cards" aria-busy="true"></div>
       </div>
     </section>
 

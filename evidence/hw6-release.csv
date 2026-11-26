@@ -1,0 +1,352 @@
+scope,name,status
+Файлы,Сохранность CODEX_LectureFlow_HW6_ADB_QA.md,PASS
+Файлы,Сохранность LectureFlow_HW5_Audit_2026-11-09.zip,PASS
+Файлы,Сохранность LectureFlow_HW5_Fixed_Source_2026-11-09.zip,PASS
+Файлы,Сохранность LectureFlow_HW6_Implementation_QA_2026-11-26.zip,PASS
+Файлы,Манифест кандидата HW6,PASS
+Файлы,HW5 совпадает с source-fixed.zip и хешами исторического аудита,PASS
+Файлы,node --check js/script.js,PASS
+Файлы,Стабильный пустой контейнер в исходном HTML,PASS
+Файлы,Семь объектов с уникальными целочисленными ID,PASS
+Файлы,Схема карточки 1,PASS
+Файлы,"Контент и пресет HW5 → HW6, ID 1",PASS
+Файлы,Схема карточки 2,PASS
+Файлы,"Контент и пресет HW5 → HW6, ID 2",PASS
+Файлы,Схема карточки 3,PASS
+Файлы,"Контент и пресет HW5 → HW6, ID 3",PASS
+Файлы,Схема карточки 4,PASS
+Файлы,"Контент и пресет HW5 → HW6, ID 4",PASS
+Файлы,Схема карточки 5,PASS
+Файлы,"Контент и пресет HW5 → HW6, ID 5",PASS
+Файлы,Схема карточки 6,PASS
+Файлы,"Контент и пресет HW5 → HW6, ID 6",PASS
+Файлы,Схема карточки 7,PASS
+Файлы,"Контент и пресет HW5 → HW6, ID 7",PASS
+Файлы,Совпадение с кандидатом index.html,PASS
+Файлы,Совпадение с кандидатом css/style.css,PASS
+Файлы,Совпадение с кандидатом data/data.json,PASS
+Файлы,Совпадение с кандидатом assets/favicon.svg,PASS
+Файлы,Совпадение с кандидатом assets/images/README.txt,PASS
+Файлы,Снимки до и после при ширине 375 px,PASS
+Файлы,Снимки до и после при ширине 390 px,PASS
+Файлы,Снимки до и после при ширине 768 px,PASS
+Файлы,Снимки до и после при ширине 1024 px,PASS
+Файлы,Снимки до и после при ширине 1440 px,PASS
+HTTP/Chrome,HTTP /,PASS
+HTTP/Chrome,HTTP /index.html,PASS
+HTTP/Chrome,HTTP /js/script.js,PASS
+HTTP/Chrome,HTTP /css/style.css,PASS
+HTTP/Chrome,HTTP /data/data.json,PASS
+HTTP/Chrome,HTTP /assets/favicon.svg,PASS
+Chrome 375 px,"До ответа JSON показана загрузка, управление заблокировано",PASS
+Chrome 375 px,"Настоящий fetch JSON, HTTP 200 и семь исходных объектов",PASS
+Chrome 375 px,Содержимое всех семи карточек,PASS
+Chrome 375 px,Обновление страницы без дублей,PASS
+Chrome 375 px,Горизонтальное переполнение отсутствует,PASS
+Chrome 375 px,Регистр и пробелы в поиске,PASS
+Chrome 375 px,В DOM находятся только отобранные объекты,PASS
+Chrome 375 px,Запрос → подходящая категория,PASS
+Chrome 375 px,Запрос → неподходящая категория,PASS
+Chrome 375 px,Текст о нуле совпадений,PASS
+Chrome 375 px,Сброс и фокус,PASS
+Chrome 375 px,Категория notes,PASS
+Chrome 375 px,Категория study,PASS
+Chrome 375 px,Категория practice,PASS
+Chrome 375 px,Категория → запрос,PASS
+Chrome 375 px,Смена категории при активном поиске,PASS
+Chrome 375 px,Пресет 1 и единственный aria-pressed,PASS
+Chrome 375 px,Текст промпта 1 совпадает с HW5,PASS
+Chrome 375 px,"Системный буфер обмена, пресет 1",PASS
+Chrome 375 px,Пресет 2 и единственный aria-pressed,PASS
+Chrome 375 px,Текст промпта 2 совпадает с HW5,PASS
+Chrome 375 px,"Системный буфер обмена, пресет 2",PASS
+Chrome 375 px,Пресет 3 и единственный aria-pressed,PASS
+Chrome 375 px,Текст промпта 3 совпадает с HW5,PASS
+Chrome 375 px,"Системный буфер обмена, пресет 3",PASS
+Chrome 375 px,Пресет 4 и единственный aria-pressed,PASS
+Chrome 375 px,Текст промпта 4 совпадает с HW5,PASS
+Chrome 375 px,"Системный буфер обмена, пресет 4",PASS
+Chrome 375 px,Пресет 5 и единственный aria-pressed,PASS
+Chrome 375 px,Текст промпта 5 совпадает с HW5,PASS
+Chrome 375 px,"Системный буфер обмена, пресет 5",PASS
+Chrome 375 px,Пресет 6 и единственный aria-pressed,PASS
+Chrome 375 px,Текст промпта 6 совпадает с HW5,PASS
+Chrome 375 px,"Системный буфер обмена, пресет 6",PASS
+Chrome 375 px,Пресет 7 и единственный aria-pressed,PASS
+Chrome 375 px,Текст промпта 7 совпадает с HW5,PASS
+Chrome 375 px,"Системный буфер обмена, пресет 7",PASS
+Chrome 375 px,Выделение и готовый промпт после перерисовки,PASS
+Chrome 375 px,Изменение настроек аннулирует промпт,PASS
+Chrome 375 px,Окно 3 читает нужную карточку,PASS
+Chrome 375 px,Tab остаётся в диалоге 3,PASS
+Chrome 375 px,Shift+Tab остаётся в диалоге 3,PASS
+Chrome 375 px,Закрытие и возврат фокуса 3,PASS
+Chrome 375 px,Окно 6 читает нужную карточку,PASS
+Chrome 375 px,Tab остаётся в диалоге 6,PASS
+Chrome 375 px,Shift+Tab остаётся в диалоге 6,PASS
+Chrome 375 px,Закрытие и возврат фокуса 6,PASS
+Chrome 375 px,Окно 3 читает нужную карточку,PASS
+Chrome 375 px,Tab остаётся в диалоге 3,PASS
+Chrome 375 px,Shift+Tab остаётся в диалоге 3,PASS
+Chrome 375 px,Закрытие и возврат фокуса 3,PASS
+Chrome 375 px,После сброса восстановлены исходный порядок и семь карточек,PASS
+Chrome 375 px,"Чистые Console, JS и сеть успешной сессии",PASS
+Chrome 390 px,"До ответа JSON показана загрузка, управление заблокировано",PASS
+Chrome 390 px,"Настоящий fetch JSON, HTTP 200 и семь исходных объектов",PASS
+Chrome 390 px,Содержимое всех семи карточек,PASS
+Chrome 390 px,Обновление страницы без дублей,PASS
+Chrome 390 px,Горизонтальное переполнение отсутствует,PASS
+Chrome 390 px,Регистр и пробелы в поиске,PASS
+Chrome 390 px,В DOM находятся только отобранные объекты,PASS
+Chrome 390 px,Запрос → подходящая категория,PASS
+Chrome 390 px,Запрос → неподходящая категория,PASS
+Chrome 390 px,Текст о нуле совпадений,PASS
+Chrome 390 px,Сброс и фокус,PASS
+Chrome 390 px,Категория notes,PASS
+Chrome 390 px,Категория study,PASS
+Chrome 390 px,Категория practice,PASS
+Chrome 390 px,Категория → запрос,PASS
+Chrome 390 px,Смена категории при активном поиске,PASS
+Chrome 390 px,Пресет 1 и единственный aria-pressed,PASS
+Chrome 390 px,Текст промпта 1 совпадает с HW5,PASS
+Chrome 390 px,"Системный буфер обмена, пресет 1",PASS
+Chrome 390 px,Пресет 2 и единственный aria-pressed,PASS
+Chrome 390 px,Текст промпта 2 совпадает с HW5,PASS
+Chrome 390 px,"Системный буфер обмена, пресет 2",PASS
+Chrome 390 px,Пресет 3 и единственный aria-pressed,PASS
+Chrome 390 px,Текст промпта 3 совпадает с HW5,PASS
+Chrome 390 px,"Системный буфер обмена, пресет 3",PASS
+Chrome 390 px,Пресет 4 и единственный aria-pressed,PASS
+Chrome 390 px,Текст промпта 4 совпадает с HW5,PASS
+Chrome 390 px,"Системный буфер обмена, пресет 4",PASS
+Chrome 390 px,Пресет 5 и единственный aria-pressed,PASS
+Chrome 390 px,Текст промпта 5 совпадает с HW5,PASS
+Chrome 390 px,"Системный буфер обмена, пресет 5",PASS
+Chrome 390 px,Пресет 6 и единственный aria-pressed,PASS
+Chrome 390 px,Текст промпта 6 совпадает с HW5,PASS
+Chrome 390 px,"Системный буфер обмена, пресет 6",PASS
+Chrome 390 px,Пресет 7 и единственный aria-pressed,PASS
+Chrome 390 px,Текст промпта 7 совпадает с HW5,PASS
+Chrome 390 px,"Системный буфер обмена, пресет 7",PASS
+Chrome 390 px,Выделение и готовый промпт после перерисовки,PASS
+Chrome 390 px,Изменение настроек аннулирует промпт,PASS
+Chrome 390 px,Окно 3 читает нужную карточку,PASS
+Chrome 390 px,Tab остаётся в диалоге 3,PASS
+Chrome 390 px,Shift+Tab остаётся в диалоге 3,PASS
+Chrome 390 px,Закрытие и возврат фокуса 3,PASS
+Chrome 390 px,Окно 6 читает нужную карточку,PASS
+Chrome 390 px,Tab остаётся в диалоге 6,PASS
+Chrome 390 px,Shift+Tab остаётся в диалоге 6,PASS
+Chrome 390 px,Закрытие и возврат фокуса 6,PASS
+Chrome 390 px,Окно 3 читает нужную карточку,PASS
+Chrome 390 px,Tab остаётся в диалоге 3,PASS
+Chrome 390 px,Shift+Tab остаётся в диалоге 3,PASS
+Chrome 390 px,Закрытие и возврат фокуса 3,PASS
+Chrome 390 px,После сброса восстановлены исходный порядок и семь карточек,PASS
+Chrome 390 px,"Чистые Console, JS и сеть успешной сессии",PASS
+Chrome 768 px,"До ответа JSON показана загрузка, управление заблокировано",PASS
+Chrome 768 px,"Настоящий fetch JSON, HTTP 200 и семь исходных объектов",PASS
+Chrome 768 px,Содержимое всех семи карточек,PASS
+Chrome 768 px,Обновление страницы без дублей,PASS
+Chrome 768 px,Горизонтальное переполнение отсутствует,PASS
+Chrome 768 px,Регистр и пробелы в поиске,PASS
+Chrome 768 px,В DOM находятся только отобранные объекты,PASS
+Chrome 768 px,Запрос → подходящая категория,PASS
+Chrome 768 px,Запрос → неподходящая категория,PASS
+Chrome 768 px,Текст о нуле совпадений,PASS
+Chrome 768 px,Сброс и фокус,PASS
+Chrome 768 px,Категория notes,PASS
+Chrome 768 px,Категория study,PASS
+Chrome 768 px,Категория practice,PASS
+Chrome 768 px,Категория → запрос,PASS
+Chrome 768 px,Смена категории при активном поиске,PASS
+Chrome 768 px,Пресет 1 и единственный aria-pressed,PASS
+Chrome 768 px,Текст промпта 1 совпадает с HW5,PASS
+Chrome 768 px,"Системный буфер обмена, пресет 1",PASS
+Chrome 768 px,Пресет 2 и единственный aria-pressed,PASS
+Chrome 768 px,Текст промпта 2 совпадает с HW5,PASS
+Chrome 768 px,"Системный буфер обмена, пресет 2",PASS
+Chrome 768 px,Пресет 3 и единственный aria-pressed,PASS
+Chrome 768 px,Текст промпта 3 совпадает с HW5,PASS
+Chrome 768 px,"Системный буфер обмена, пресет 3",PASS
+Chrome 768 px,Пресет 4 и единственный aria-pressed,PASS
+Chrome 768 px,Текст промпта 4 совпадает с HW5,PASS
+Chrome 768 px,"Системный буфер обмена, пресет 4",PASS
+Chrome 768 px,Пресет 5 и единственный aria-pressed,PASS
+Chrome 768 px,Текст промпта 5 совпадает с HW5,PASS
+Chrome 768 px,"Системный буфер обмена, пресет 5",PASS
+Chrome 768 px,Пресет 6 и единственный aria-pressed,PASS
+Chrome 768 px,Текст промпта 6 совпадает с HW5,PASS
+Chrome 768 px,"Системный буфер обмена, пресет 6",PASS
+Chrome 768 px,Пресет 7 и единственный aria-pressed,PASS
+Chrome 768 px,Текст промпта 7 совпадает с HW5,PASS
+Chrome 768 px,"Системный буфер обмена, пресет 7",PASS
+Chrome 768 px,Выделение и готовый промпт после перерисовки,PASS
+Chrome 768 px,Изменение настроек аннулирует промпт,PASS
+Chrome 768 px,Окно 3 читает нужную карточку,PASS
+Chrome 768 px,Tab остаётся в диалоге 3,PASS
+Chrome 768 px,Shift+Tab остаётся в диалоге 3,PASS
+Chrome 768 px,Закрытие и возврат фокуса 3,PASS
+Chrome 768 px,Окно 6 читает нужную карточку,PASS
+Chrome 768 px,Tab остаётся в диалоге 6,PASS
+Chrome 768 px,Shift+Tab остаётся в диалоге 6,PASS
+Chrome 768 px,Закрытие и возврат фокуса 6,PASS
+Chrome 768 px,Окно 3 читает нужную карточку,PASS
+Chrome 768 px,Tab остаётся в диалоге 3,PASS
+Chrome 768 px,Shift+Tab остаётся в диалоге 3,PASS
+Chrome 768 px,Закрытие и возврат фокуса 3,PASS
+Chrome 768 px,После сброса восстановлены исходный порядок и семь карточек,PASS
+Chrome 768 px,"Чистые Console, JS и сеть успешной сессии",PASS
+Chrome 1024 px,"До ответа JSON показана загрузка, управление заблокировано",PASS
+Chrome 1024 px,"Настоящий fetch JSON, HTTP 200 и семь исходных объектов",PASS
+Chrome 1024 px,Содержимое всех семи карточек,PASS
+Chrome 1024 px,Обновление страницы без дублей,PASS
+Chrome 1024 px,Горизонтальное переполнение отсутствует,PASS
+Chrome 1024 px,Регистр и пробелы в поиске,PASS
+Chrome 1024 px,В DOM находятся только отобранные объекты,PASS
+Chrome 1024 px,Запрос → подходящая категория,PASS
+Chrome 1024 px,Запрос → неподходящая категория,PASS
+Chrome 1024 px,Текст о нуле совпадений,PASS
+Chrome 1024 px,Сброс и фокус,PASS
+Chrome 1024 px,Категория notes,PASS
+Chrome 1024 px,Категория study,PASS
+Chrome 1024 px,Категория practice,PASS
+Chrome 1024 px,Категория → запрос,PASS
+Chrome 1024 px,Смена категории при активном поиске,PASS
+Chrome 1024 px,Пресет 1 и единственный aria-pressed,PASS
+Chrome 1024 px,Текст промпта 1 совпадает с HW5,PASS
+Chrome 1024 px,"Системный буфер обмена, пресет 1",PASS
+Chrome 1024 px,Пресет 2 и единственный aria-pressed,PASS
+Chrome 1024 px,Текст промпта 2 совпадает с HW5,PASS
+Chrome 1024 px,"Системный буфер обмена, пресет 2",PASS
+Chrome 1024 px,Пресет 3 и единственный aria-pressed,PASS
+Chrome 1024 px,Текст промпта 3 совпадает с HW5,PASS
+Chrome 1024 px,"Системный буфер обмена, пресет 3",PASS
+Chrome 1024 px,Пресет 4 и единственный aria-pressed,PASS
+Chrome 1024 px,Текст промпта 4 совпадает с HW5,PASS
+Chrome 1024 px,"Системный буфер обмена, пресет 4",PASS
+Chrome 1024 px,Пресет 5 и единственный aria-pressed,PASS
+Chrome 1024 px,Текст промпта 5 совпадает с HW5,PASS
+Chrome 1024 px,"Системный буфер обмена, пресет 5",PASS
+Chrome 1024 px,Пресет 6 и единственный aria-pressed,PASS
+Chrome 1024 px,Текст промпта 6 совпадает с HW5,PASS
+Chrome 1024 px,"Системный буфер обмена, пресет 6",PASS
+Chrome 1024 px,Пресет 7 и единственный aria-pressed,PASS
+Chrome 1024 px,Текст промпта 7 совпадает с HW5,PASS
+Chrome 1024 px,"Системный буфер обмена, пресет 7",PASS
+Chrome 1024 px,Выделение и готовый промпт после перерисовки,PASS
+Chrome 1024 px,Изменение настроек аннулирует промпт,PASS
+Chrome 1024 px,Окно 3 читает нужную карточку,PASS
+Chrome 1024 px,Tab остаётся в диалоге 3,PASS
+Chrome 1024 px,Shift+Tab остаётся в диалоге 3,PASS
+Chrome 1024 px,Закрытие и возврат фокуса 3,PASS
+Chrome 1024 px,Окно 6 читает нужную карточку,PASS
+Chrome 1024 px,Tab остаётся в диалоге 6,PASS
+Chrome 1024 px,Shift+Tab остаётся в диалоге 6,PASS
+Chrome 1024 px,Закрытие и возврат фокуса 6,PASS
+Chrome 1024 px,Окно 3 читает нужную карточку,PASS
+Chrome 1024 px,Tab остаётся в диалоге 3,PASS
+Chrome 1024 px,Shift+Tab остаётся в диалоге 3,PASS
+Chrome 1024 px,Закрытие и возврат фокуса 3,PASS
+Chrome 1024 px,После сброса восстановлены исходный порядок и семь карточек,PASS
+Chrome 1024 px,"Чистые Console, JS и сеть успешной сессии",PASS
+Chrome 1440 px,"До ответа JSON показана загрузка, управление заблокировано",PASS
+Chrome 1440 px,"Настоящий fetch JSON, HTTP 200 и семь исходных объектов",PASS
+Chrome 1440 px,Содержимое всех семи карточек,PASS
+Chrome 1440 px,Обновление страницы без дублей,PASS
+Chrome 1440 px,Горизонтальное переполнение отсутствует,PASS
+Chrome 1440 px,Регистр и пробелы в поиске,PASS
+Chrome 1440 px,В DOM находятся только отобранные объекты,PASS
+Chrome 1440 px,Запрос → подходящая категория,PASS
+Chrome 1440 px,Запрос → неподходящая категория,PASS
+Chrome 1440 px,Текст о нуле совпадений,PASS
+Chrome 1440 px,Сброс и фокус,PASS
+Chrome 1440 px,Категория notes,PASS
+Chrome 1440 px,Категория study,PASS
+Chrome 1440 px,Категория practice,PASS
+Chrome 1440 px,Категория → запрос,PASS
+Chrome 1440 px,Смена категории при активном поиске,PASS
+Chrome 1440 px,Пресет 1 и единственный aria-pressed,PASS
+Chrome 1440 px,Текст промпта 1 совпадает с HW5,PASS
+Chrome 1440 px,"Системный буфер обмена, пресет 1",PASS
+Chrome 1440 px,Пресет 2 и единственный aria-pressed,PASS
+Chrome 1440 px,Текст промпта 2 совпадает с HW5,PASS
+Chrome 1440 px,"Системный буфер обмена, пресет 2",PASS
+Chrome 1440 px,Пресет 3 и единственный aria-pressed,PASS
+Chrome 1440 px,Текст промпта 3 совпадает с HW5,PASS
+Chrome 1440 px,"Системный буфер обмена, пресет 3",PASS
+Chrome 1440 px,Пресет 4 и единственный aria-pressed,PASS
+Chrome 1440 px,Текст промпта 4 совпадает с HW5,PASS
+Chrome 1440 px,"Системный буфер обмена, пресет 4",PASS
+Chrome 1440 px,Пресет 5 и единственный aria-pressed,PASS
+Chrome 1440 px,Текст промпта 5 совпадает с HW5,PASS
+Chrome 1440 px,"Системный буфер обмена, пресет 5",PASS
+Chrome 1440 px,Пресет 6 и единственный aria-pressed,PASS
+Chrome 1440 px,Текст промпта 6 совпадает с HW5,PASS
+Chrome 1440 px,"Системный буфер обмена, пресет 6",PASS
+Chrome 1440 px,Пресет 7 и единственный aria-pressed,PASS
+Chrome 1440 px,Текст промпта 7 совпадает с HW5,PASS
+Chrome 1440 px,"Системный буфер обмена, пресет 7",PASS
+Chrome 1440 px,Выделение и готовый промпт после перерисовки,PASS
+Chrome 1440 px,Изменение настроек аннулирует промпт,PASS
+Chrome 1440 px,Окно 3 читает нужную карточку,PASS
+Chrome 1440 px,Tab остаётся в диалоге 3,PASS
+Chrome 1440 px,Shift+Tab остаётся в диалоге 3,PASS
+Chrome 1440 px,Закрытие и возврат фокуса 3,PASS
+Chrome 1440 px,Окно 6 читает нужную карточку,PASS
+Chrome 1440 px,Tab остаётся в диалоге 6,PASS
+Chrome 1440 px,Shift+Tab остаётся в диалоге 6,PASS
+Chrome 1440 px,Закрытие и возврат фокуса 6,PASS
+Chrome 1440 px,Окно 3 читает нужную карточку,PASS
+Chrome 1440 px,Tab остаётся в диалоге 3,PASS
+Chrome 1440 px,Shift+Tab остаётся в диалоге 3,PASS
+Chrome 1440 px,Закрытие и возврат фокуса 3,PASS
+Chrome 1440 px,После сброса восстановлены исходный порядок и семь карточек,PASS
+Chrome 1440 px,"Чистые Console, JS и сеть успешной сессии",PASS
+HTTP/Chrome,Состояние 404,PASS
+HTTP/Chrome,Восстановление 404,PASS
+HTTP/Chrome,Состояние disconnect,PASS
+HTTP/Chrome,Восстановление disconnect,PASS
+HTTP/Chrome,Состояние syntax,PASS
+HTTP/Chrome,Восстановление syntax,PASS
+HTTP/Chrome,Состояние schema,PASS
+HTTP/Chrome,Восстановление schema,PASS
+HTTP/Chrome,Состояние preset,PASS
+HTTP/Chrome,Восстановление preset,PASS
+HTTP/Chrome,Состояние empty,PASS
+HTTP/Chrome,Восстановление empty,PASS
+HTTP/Chrome,Загрузка из подпапки /LectureFlow/,PASS
+Android,После reload семь карточек без дублей,PASS
+Android,"Fetch через HTTP 200, тело JSON совпадает с файлом",PASS
+Android,Прокрутка пальцем и ширина документа,PASS
+Android,Экранная клавиатура открыта для поиска,PASS
+Android,Поиск Anki при открытой IME,PASS
+Android,Поиск + подходящая категория,PASS
+Android,Пересечение без совпадений,PASS
+Android,Сброс поиска и категории,PASS
+Android,Модалка 3,PASS
+Android,Закрытие модалки 3,PASS
+Android,Модалка 6,PASS
+Android,Закрытие модалки 6,PASS
+Android,Выбор пресета Anki,PASS
+Android,Сгенерированный промпт совпадает с эталоном HW5,PASS
+Android,Настоящее копирование и вставка в поиск,PASS
+Android,Успешная сессия без ошибок Console и JS,PASS
+Android,Различимое сообщение 404,PASS
+Android,Повтор после 404,PASS
+Android,Различимое сообщение disconnect,PASS
+Android,Повтор после disconnect,PASS
+Android,Различимое сообщение syntax,PASS
+Android,Повтор после syntax,PASS
+Android,Различимое сообщение schema,PASS
+Android,Повтор после schema,PASS
+Android,Пустой источник,PASS
+Android,Пресет и полный промпт 1,PASS
+Android,Пресет и полный промпт 2,PASS
+Android,Пресет и полный промпт 3,PASS
+Android,Пресет и полный промпт 4,PASS
+Android,Пресет и полный промпт 5,PASS
+Android,Пресет и полный промпт 6,PASS
+Android,Пресет и полный промпт 7,PASS
+Android,После фильтра на телефоне сохранены выбор и готовый промпт,PASS
+Android,Ручной ввод Anki с экранной клавиатуры,PASS

@@ -1,0 +1,46 @@
+{
+  "task": "LectureFlow HW6 — JSON/fetch dynamic cards",
+  "date": "2026-11-26",
+  "source_branch": "hw5/javascript-interactivity-20261109",
+  "target_branch": "hw6/json-fetch-render-20261126",
+  "card_count": 7,
+  "static_html_card_count": 0,
+  "engine": "Playwright/Chromium with HTML injected through set_content, JSON fulfilled by Playwright route",
+  "viewport_widths_px": [
+    375,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "tests": {
+    "pass": 384,
+    "fail": 0,
+    "total": 384
+  },
+  "http_smoke": {
+    "status": 200,
+    "paths": [
+      "/",
+      "/js/script.js",
+      "/css/style.css",
+      "/data/data.json",
+      "/assets/favicon.svg"
+    ]
+  },
+  "syntax_check": "PASS",
+  "json_schema_check": "PASS",
+  "network_error_cases": [
+    "HTTP 404",
+    "invalid JSON",
+    "invalid schema",
+    "retry success"
+  ],
+  "scope": "local candidate only",
+  "limitations": [
+    "ERR_BLOCKED_BY_ADMINISTRATOR for Chromium navigation to local HTTP",
+    "No publicly deployed site test",
+    "No physical phone validation for HW6",
+    "No real DevTools Console screenshot"
+  ]
+}

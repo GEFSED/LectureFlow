@@ -7,30 +7,22 @@ const copyButton = document.getElementById("copy-button");
 
 // Выбор шаблона заполняет поля формы готовыми параметрами.
 // ДЗ № 6: карточки появляются после fetch(), поэтому обработчик вызывается делегированно.
-function chooseTemplate(button) {
-    goal.value = button.dataset.goal;
-    document.getElementById("detail").value = button.dataset.detail;
-    document.getElementById("extra").value = button.dataset.extra || "Без дополнительных разделов";
-    document.getElementById("formulas").checked = button.dataset.formulas === "true";
-    document.getElementById("terms").checked = button.dataset.terms === "true";
-    document.getElementById("homework").checked = button.dataset.homework === "true";
-    document.getElementById("questions").checked = button.dataset.questions === "true";
-
-    // Показываем, какая карточка выбрана.
-    document.querySelectorAll(".choose-template").forEach(function (item) {
-      item.textContent = "Выбрать";
-      item.setAttribute("aria-pressed", "false");
-      item.parentElement.classList.remove("selected");
-    });
-    button.textContent = "Выбрано";
-    button.setAttribute("aria-pressed", "true");
-    button.parentElement.classList.add("selected");
-
-    const message = "Применён шаблон «" + goal.value + "». Выбери тип материала, проверь параметры и сформируй промпт.";
-    document.getElementById("builder-message").textContent = message;
-    document.getElementById("builder-message").classList.add("is-visible");
-    clearResult();
-    document.getElementById("builder").scrollIntoView();
+function chooseTemplate(item) {
+  const preset = item.preset;
+  goal.value = preset.goal;
+  document.getElementById("detail").value = preset.detail;
+  document.getElementById("extra").value = preset.extra;
+  for (const key of ["formulas", "terms", "homework", "questions"]) {
+    document.getElementById(key).checked = preset[key];
+  }
+  selectedId = item.id;
+  applyFilters();
+  const message = document.getElementById("builder-message");
+  message.textContent = "Применён шаблон «" + goal.value + "». Выбери тип материала, проверь параметры и сформируй промпт.";
+  message.classList.add("is-visible");
+  clearResult();
+  document.getElementById("material").focus({ preventScroll: true });
+  document.getElementById("builder").scrollIntoView();
 }
 
 // После изменения параметров старый промпт больше не считается актуальным.
@@ -113,7 +105,8 @@ const templateLoadErrorText = document.querySelector("#template-load-error-text"
 const retryTemplateLoad = document.querySelector("#retry-template-load");
 const resetTemplateFilters = document.querySelector("#reset-template-filters");
 const templateControls = [templateSearch, templateCategory, resetTemplateFilters];
-let templateCards = [];
+let allCards = [];
+let selectedId = null;
 
 const templateDialog = document.querySelector("#template-dialog");
 const templateDialogTitle = document.querySelector("#template-dialog-title");
@@ -128,37 +121,42 @@ function normalizeSearchText(text) {
 function applyFilters() {
   const query = normalizeSearchText(templateSearch.value);
   const category = templateCategory.value;
-  let visibleCount = 0;
-  templateCards.forEach((card) => {
-    const title = normalizeSearchText(card.querySelector("h3").textContent);
-    const matchesText = title.includes(query);
-    const matchesCategory = category === "all" || card.dataset.category === category;
-    card.hidden = !(matchesText && matchesCategory);
-    if (!card.hidden) visibleCount += 1;
-  });
-  templateCount.textContent = `Найдено: ${visibleCount}`;
-  templateEmpty.hidden = visibleCount !== 0;
+  const visible = allCards.filter((item) =>
+    normalizeSearchText(item.title).includes(query) &&
+    (category === "all" || item.category === category)
+  );
+  renderCards(visible);
+  templateCount.textContent = `Найдено: ${visible.length}`;
+  templateEmpty.hidden = visible.length !== 0;
+  templateEmpty.textContent = allCards.length
+    ? "Ничего не найдено. Измени запрос или категорию."
+    : "В источнике пока нет шаблонов.";
+}
+
+function renderCards(items) {
+  const fragment = document.createDocumentFragment();
+  for (const item of items) fragment.append(createTemplateCard(item));
+  templateCardsContainer.replaceChildren(fragment);
 }
 
 // Проверяем формат, чтобы неполные данные не создали сломанные карточки.
 function validateTemplates(data) {
-  if (!Array.isArray(data) || data.length < 6) {
-    throw new Error("JSON: ожидался массив минимум из шести карточек");
-  }
+  if (!Array.isArray(data)) throw new Error("В файле данных ожидался массив шаблонов.");
   const ids = new Set();
   for (const item of data) {
     if (!item || !Number.isInteger(item.id) || ids.has(item.id) ||
         typeof item.title !== "string" || !item.title.trim() ||
-        !Object.hasOwn(categoryNames, item.category) ||
+        typeof item.category !== "string" || !Object.hasOwn(categoryNames, item.category) ||
         typeof item.description !== "string" || !item.description.trim() ||
         !Array.isArray(item.tags) || item.tags.some((tag) => typeof tag !== "string") ||
         typeof item.icon !== "string" || !item.icon.trim() ||
         (item.image !== null && typeof item.image !== "string") ||
         (item.link !== null && typeof item.link !== "string") ||
-        !item.preset || typeof item.preset.goal !== "string" ||
-        typeof item.preset.detail !== "string" || typeof item.preset.extra !== "string" ||
+        !item.preset || ["goal", "detail", "extra"].some((key) =>
+          !Array.from(document.getElementById(key).options).some((option) =>
+            option.value && option.value === item.preset[key])) ||
         ["formulas", "terms", "homework", "questions"].some((key) => typeof item.preset[key] !== "boolean")) {
-      throw new Error("JSON: нарушена структура карточки");
+      throw new Error("Нарушена структура данных шаблона. Проверь поля карточек и уникальность ID.");
     }
     ids.add(item.id);
   }
@@ -199,14 +197,10 @@ function createTemplateCard(item) {
   const chooseButton = document.createElement("button");
   chooseButton.className = "choose-template";
   chooseButton.type = "button";
-  chooseButton.textContent = "Выбрать";
-  chooseButton.setAttribute("aria-pressed", "false");
-  chooseButton.dataset.goal = item.preset.goal;
-  chooseButton.dataset.detail = item.preset.detail;
-  chooseButton.dataset.extra = item.preset.extra;
-  for (const key of ["formulas", "terms", "homework", "questions"]) {
-    chooseButton.dataset[key] = String(item.preset[key]);
-  }
+  const selected = item.id === selectedId;
+  card.classList.toggle("selected", selected);
+  chooseButton.textContent = selected ? "Выбрано" : "Выбрать";
+  chooseButton.setAttribute("aria-pressed", String(selected));
 
   const detailsButton = document.createElement("button");
   detailsButton.className = "template-details";
@@ -219,17 +213,17 @@ function createTemplateCard(item) {
 
 // Событие назначается контейнеру один раз, независимо от количества загрузок.
 templateCardsContainer.addEventListener("click", (event) => {
-  const chooseButton = event.target.closest(".choose-template");
-  if (chooseButton && templateCardsContainer.contains(chooseButton)) {
-    chooseTemplate(chooseButton);
-    return;
-  }
-  const detailsButton = event.target.closest(".template-details");
-  if (detailsButton && templateCardsContainer.contains(detailsButton)) {
-    const card = detailsButton.closest(".card");
-    templateDialogTitle.textContent = card.querySelector("h3").textContent;
-    templateDialogDescription.textContent = card.querySelector(".card-copy p").textContent;
-    templateDialogCategory.textContent = "Категория: " + categoryNames[card.dataset.category];
+  const button = event.target.closest(".choose-template, .template-details");
+  if (!button || !templateCardsContainer.contains(button)) return;
+  const id = button.closest(".card")?.dataset.templateId;
+  const item = allCards.find((entry) => String(entry.id) === id);
+  if (!item) return;
+  if (button.matches(".choose-template")) {
+    chooseTemplate(item);
+  } else {
+    templateDialogTitle.textContent = item.title;
+    templateDialogDescription.textContent = item.description;
+    templateDialogCategory.textContent = "Категория: " + categoryNames[item.category];
     templateDialog.showModal();
   }
 });
@@ -242,22 +236,20 @@ async function loadTemplates() {
   templateControls.forEach((control) => { control.disabled = true; });
   templateCardsContainer.setAttribute("aria-busy", "true");
   templateCardsContainer.replaceChildren();
-  templateCards = [];
+  allCards = [];
   try {
     const response = await fetch("data/data.json");
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const items = validateTemplates(await response.json());
-    const fragment = document.createDocumentFragment();
-    items.forEach((item) => fragment.append(createTemplateCard(item)));
-    templateCardsContainer.replaceChildren(fragment);
-    templateCards = Array.from(templateCardsContainer.querySelectorAll(".card"));
-    templateControls.forEach((control) => { control.disabled = false; });
+    if (!response.ok) throw new Error(`Сервер вернул HTTP ${response.status} при загрузке шаблонов.`);
+    allCards = validateTemplates(await response.json());
+    templateControls.forEach((control) => { control.disabled = allCards.length === 0; });
     applyFilters();
   } catch (error) {
     templateCount.textContent = "Шаблоны недоступны";
-    templateLoadErrorText.textContent = location.protocol === "file:"
-      ? "Открой страницу через Live Server (HTTP): браузер не может загрузить JSON из локального файла."
-      : "Не удалось загрузить шаблоны. Проверь соединение и нажми «Повторить загрузку».";
+    let reason = error.message;
+    if (error instanceof SyntaxError) reason = "Файл шаблонов содержит некорректный JSON.";
+    if (error instanceof TypeError) reason = "Не удалось получить данные. Проверь соединение с сервером.";
+    if (location.protocol === "file:") reason = "Открой страницу через Live Server или другой HTTP-сервер.";
+    templateLoadErrorText.textContent = reason + " Затем нажми «Повторить загрузку».";
     templateLoadError.hidden = false;
     console.warn("Не удалось загрузить шаблоны:", error.message);
   } finally {

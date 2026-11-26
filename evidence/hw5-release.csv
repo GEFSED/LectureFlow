@@ -1,0 +1,479 @@
+scope,width,id,name,status
+Исходники,,,Исправленный ZIP совпадает с source-fixed.zip из аудита,PASS
+Исходники,,,Объекты исходной и исправленной Git-веток,PASS
+Исходники,,,Все 11 архивных файлов соответствуют ветке с учётом CRLF,PASS
+Исходники,,,Шесть файлов сайта совпали с ZIP побайтно и с GitHub PR по Git blob,PASS
+Исходники,,,В новой ветке изменены только документы,PASS
+Исходники,,,SHA-256 итоговой шестой работы,PASS
+Исходники,,,Эталон для сравнения совпал с ZIP и рабочей версией ДЗ 6,PASS
+Исходники,,,"HTML — язык документа, doctype, viewport и уникальные ID",PASS
+Исходники,,,HTML — семь размеченных article и один dialog,PASS
+Исходники,,,"HTML — ссылки форм, label и ARIA указывают на существующие ID",PASS
+Исходники,,,"JS — внешний скрипт с defer, отсутствие inline-обработчиков",PASS
+Исходники,,,JS — проверка синтаксиса Node.js,PASS
+Исходники,,,CSS и favicon подключены и существуют,PASS
+Исходники,,,CSS — адаптивные правила и видимый клавиатурный фокус,PASS
+Chrome,375,HTTP-01,"Открытие через HTTP; загрузка HTML, CSS, JS",PASS
+Chrome,375,INIT-01,"Семь исходных карточек в правильном порядке, счётчик, скрытый диалог",PASS
+Chrome,375,LAYOUT-01,"Адаптив: сетка, отсутствие горизонтального переполнения и обрезания текста",PASS
+Chrome,375,SEARCH-1,Живой поиск: Подробный конспект,PASS
+Chrome,375,SEARCH-2,Живой поиск: Краткое резюме,PASS
+Chrome,375,SEARCH-3,Живой поиск: Термины и определения,PASS
+Chrome,375,SEARCH-4,Живой поиск: Формулы и алгоритмы,PASS
+Chrome,375,SEARCH-5,Живой поиск: Домашнее задание,PASS
+Chrome,375,SEARCH-6,Живой поиск: Карточки Anki,PASS
+Chrome,375,SEARCH-7,Живой поиск: Самопроверка,PASS
+Chrome,375,SEARCH-CASE,"Поиск игнорирует регистр, пробелы по краям и NBSP",PASS
+Chrome,375,SEARCH-SPACES,Нормализация повторных внутренних пробелов,PASS
+Chrome,375,SEARCH-LIVE,Посимвольный ввод и Backspace обновляют список без Enter,PASS
+Chrome,375,SEARCH-EMPTY,"Пустой запрос, только пробелы и отсутствующее слово",PASS
+Chrome,375,SEARCH-TEXT,Спецсимволы являются текстом; поиск соответствует заголовкам,PASS
+Chrome,375,FILTER-all,Фильтр категории: all,PASS
+Chrome,375,FILTER-notes,Фильтр категории: notes,PASS
+Chrome,375,FILTER-study,Фильтр категории: study,PASS
+Chrome,375,FILTER-practice,Фильтр категории: practice,PASS
+Chrome,375,AND-0-all,Пересечение и оба порядка: «» + all,PASS
+Chrome,375,AND-0-notes,Пересечение и оба порядка: «» + notes,PASS
+Chrome,375,AND-0-study,Пересечение и оба порядка: «» + study,PASS
+Chrome,375,AND-0-practice,Пересечение и оба порядка: «» + practice,PASS
+Chrome,375,AND-1-all,Пересечение и оба порядка: «конспект» + all,PASS
+Chrome,375,AND-1-notes,Пересечение и оба порядка: «конспект» + notes,PASS
+Chrome,375,AND-1-study,Пересечение и оба порядка: «конспект» + study,PASS
+Chrome,375,AND-1-practice,Пересечение и оба порядка: «конспект» + practice,PASS
+Chrome,375,AND-2-all,Пересечение и оба порядка: «AnKi» + all,PASS
+Chrome,375,AND-2-notes,Пересечение и оба порядка: «AnKi» + notes,PASS
+Chrome,375,AND-2-study,Пересечение и оба порядка: «AnKi» + study,PASS
+Chrome,375,AND-2-practice,Пересечение и оба порядка: «AnKi» + practice,PASS
+Chrome,375,AND-3-all,Пересечение и оба порядка: «формулы» + all,PASS
+Chrome,375,AND-3-notes,Пересечение и оба порядка: «формулы» + notes,PASS
+Chrome,375,AND-3-study,Пересечение и оба порядка: «формулы» + study,PASS
+Chrome,375,AND-3-practice,Пересечение и оба порядка: «формулы» + practice,PASS
+Chrome,375,AND-4-all,Пересечение и оба порядка: «несуществующий» + all,PASS
+Chrome,375,AND-4-notes,Пересечение и оба порядка: «несуществующий» + notes,PASS
+Chrome,375,AND-4-study,Пересечение и оба порядка: «несуществующий» + study,PASS
+Chrome,375,AND-4-practice,Пересечение и оба порядка: «несуществующий» + practice,PASS
+Chrome,375,RESET-01,Сброс из нулевого результата; 10 повторных кликов; фокус,PASS
+Chrome,375,KEYBOARD-01,"Tab по поиску, категории, сбросу и видимой карточке; скрытые пропускаются",PASS
+Chrome,375,MODAL-1,"Подробности карточки 1: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,375,MODAL-2,"Подробности карточки 2: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,375,MODAL-3,"Подробности карточки 3: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,375,MODAL-4,"Подробности карточки 4: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,375,MODAL-5,"Подробности карточки 5: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,375,MODAL-6,"Подробности карточки 6: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,375,MODAL-7,"Подробности карточки 7: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,375,MODAL-ESC,Escape закрывает диалог и возвращает фокус; повторный Escape безопасен,PASS
+Chrome,375,MODAL-TAB,Tab и Shift+Tab сохраняют фокус внутри диалога,PASS
+Chrome,375,MODAL-REPEAT,"10 открытий, двойной клик и отсутствие дублированных эффектов",PASS
+Chrome,375,LEGACY-VALIDATION,Обязательные тип материала и цель блокируют пустой промпт,PASS
+Chrome,375,LEGACY-1,"Выбор, поля, точный промпт и реальное копирование: Подробный конспект",PASS
+Chrome,375,LEGACY-2,"Выбор, поля, точный промпт и реальное копирование: Краткое резюме",PASS
+Chrome,375,LEGACY-3,"Выбор, поля, точный промпт и реальное копирование: Термины и определения",PASS
+Chrome,375,LEGACY-4,"Выбор, поля, точный промпт и реальное копирование: Формулы и алгоритмы",PASS
+Chrome,375,LEGACY-5,"Выбор, поля, точный промпт и реальное копирование: Домашнее задание",PASS
+Chrome,375,LEGACY-6,"Выбор, поля, точный промпт и реальное копирование: Карточки Anki",PASS
+Chrome,375,LEGACY-7,"Выбор, поля, точный промпт и реальное копирование: Самопроверка",PASS
+Chrome,375,LEGACY-REPEAT,"Повторный выбор, сборка и копирование не дублируют текст",PASS
+Chrome,375,LEGACY-CUSTOM,Ручная настройка всех параметров отражается в промпте,PASS
+Chrome,375,INVALIDATE-material,Изменение material очищает устаревший результат,PASS
+Chrome,375,INVALIDATE-goal,Изменение goal очищает устаревший результат,PASS
+Chrome,375,INVALIDATE-language,Изменение language очищает устаревший результат,PASS
+Chrome,375,INVALIDATE-detail,Изменение detail очищает устаревший результат,PASS
+Chrome,375,INVALIDATE-source-mode,Изменение source-mode очищает устаревший результат,PASS
+Chrome,375,INVALIDATE-extra,Изменение extra очищает устаревший результат,PASS
+Chrome,375,INVALIDATE-formulas,Переключение formulas очищает устаревший результат,PASS
+Chrome,375,INVALIDATE-terms,Переключение terms очищает устаревший результат,PASS
+Chrome,375,INVALIDATE-homework,Переключение homework очищает устаревший результат,PASS
+Chrome,375,INVALIDATE-questions,Переключение questions очищает устаревший результат,PASS
+Chrome,375,LEGACY-FILE,"Выбор и снятие локального файла; имя отображается, файл не отправляется",PASS
+Chrome,375,INTEGRATION-01,Поиск и диалог сохраняют готовый промпт; выбор отфильтрованной карточки очищает его,PASS
+Chrome,375,COPY-DENIED,Симуляция отказа Clipboard API: текст выделен для Ctrl+C,PASS
+Chrome,375,NAV-01,Адаптивная навигация и переход к форме,PASS
+Chrome,375,LAYOUT-STATE,"Адаптив после действий, длинного статуса и выбора карточки",PASS
+Chrome,375,JS-ERRORS,Отсутствие необработанных JavaScript ошибок,PASS
+Chrome,375,CONSOLE-ERRORS,Отсутствие Console.error и сетевых ошибок,PASS
+Chrome,390,HTTP-01,"Открытие через HTTP; загрузка HTML, CSS, JS",PASS
+Chrome,390,INIT-01,"Семь исходных карточек в правильном порядке, счётчик, скрытый диалог",PASS
+Chrome,390,LAYOUT-01,"Адаптив: сетка, отсутствие горизонтального переполнения и обрезания текста",PASS
+Chrome,390,SEARCH-1,Живой поиск: Подробный конспект,PASS
+Chrome,390,SEARCH-2,Живой поиск: Краткое резюме,PASS
+Chrome,390,SEARCH-3,Живой поиск: Термины и определения,PASS
+Chrome,390,SEARCH-4,Живой поиск: Формулы и алгоритмы,PASS
+Chrome,390,SEARCH-5,Живой поиск: Домашнее задание,PASS
+Chrome,390,SEARCH-6,Живой поиск: Карточки Anki,PASS
+Chrome,390,SEARCH-7,Живой поиск: Самопроверка,PASS
+Chrome,390,SEARCH-CASE,"Поиск игнорирует регистр, пробелы по краям и NBSP",PASS
+Chrome,390,SEARCH-SPACES,Нормализация повторных внутренних пробелов,PASS
+Chrome,390,SEARCH-LIVE,Посимвольный ввод и Backspace обновляют список без Enter,PASS
+Chrome,390,SEARCH-EMPTY,"Пустой запрос, только пробелы и отсутствующее слово",PASS
+Chrome,390,SEARCH-TEXT,Спецсимволы являются текстом; поиск соответствует заголовкам,PASS
+Chrome,390,FILTER-all,Фильтр категории: all,PASS
+Chrome,390,FILTER-notes,Фильтр категории: notes,PASS
+Chrome,390,FILTER-study,Фильтр категории: study,PASS
+Chrome,390,FILTER-practice,Фильтр категории: practice,PASS
+Chrome,390,AND-0-all,Пересечение и оба порядка: «» + all,PASS
+Chrome,390,AND-0-notes,Пересечение и оба порядка: «» + notes,PASS
+Chrome,390,AND-0-study,Пересечение и оба порядка: «» + study,PASS
+Chrome,390,AND-0-practice,Пересечение и оба порядка: «» + practice,PASS
+Chrome,390,AND-1-all,Пересечение и оба порядка: «конспект» + all,PASS
+Chrome,390,AND-1-notes,Пересечение и оба порядка: «конспект» + notes,PASS
+Chrome,390,AND-1-study,Пересечение и оба порядка: «конспект» + study,PASS
+Chrome,390,AND-1-practice,Пересечение и оба порядка: «конспект» + practice,PASS
+Chrome,390,AND-2-all,Пересечение и оба порядка: «AnKi» + all,PASS
+Chrome,390,AND-2-notes,Пересечение и оба порядка: «AnKi» + notes,PASS
+Chrome,390,AND-2-study,Пересечение и оба порядка: «AnKi» + study,PASS
+Chrome,390,AND-2-practice,Пересечение и оба порядка: «AnKi» + practice,PASS
+Chrome,390,AND-3-all,Пересечение и оба порядка: «формулы» + all,PASS
+Chrome,390,AND-3-notes,Пересечение и оба порядка: «формулы» + notes,PASS
+Chrome,390,AND-3-study,Пересечение и оба порядка: «формулы» + study,PASS
+Chrome,390,AND-3-practice,Пересечение и оба порядка: «формулы» + practice,PASS
+Chrome,390,AND-4-all,Пересечение и оба порядка: «несуществующий» + all,PASS
+Chrome,390,AND-4-notes,Пересечение и оба порядка: «несуществующий» + notes,PASS
+Chrome,390,AND-4-study,Пересечение и оба порядка: «несуществующий» + study,PASS
+Chrome,390,AND-4-practice,Пересечение и оба порядка: «несуществующий» + practice,PASS
+Chrome,390,RESET-01,Сброс из нулевого результата; 10 повторных кликов; фокус,PASS
+Chrome,390,KEYBOARD-01,"Tab по поиску, категории, сбросу и видимой карточке; скрытые пропускаются",PASS
+Chrome,390,MODAL-1,"Подробности карточки 1: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,390,MODAL-2,"Подробности карточки 2: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,390,MODAL-3,"Подробности карточки 3: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,390,MODAL-4,"Подробности карточки 4: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,390,MODAL-5,"Подробности карточки 5: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,390,MODAL-6,"Подробности карточки 6: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,390,MODAL-7,"Подробности карточки 7: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,390,MODAL-ESC,Escape закрывает диалог и возвращает фокус; повторный Escape безопасен,PASS
+Chrome,390,MODAL-TAB,Tab и Shift+Tab сохраняют фокус внутри диалога,PASS
+Chrome,390,MODAL-REPEAT,"10 открытий, двойной клик и отсутствие дублированных эффектов",PASS
+Chrome,390,LEGACY-VALIDATION,Обязательные тип материала и цель блокируют пустой промпт,PASS
+Chrome,390,LEGACY-1,"Выбор, поля, точный промпт и реальное копирование: Подробный конспект",PASS
+Chrome,390,LEGACY-2,"Выбор, поля, точный промпт и реальное копирование: Краткое резюме",PASS
+Chrome,390,LEGACY-3,"Выбор, поля, точный промпт и реальное копирование: Термины и определения",PASS
+Chrome,390,LEGACY-4,"Выбор, поля, точный промпт и реальное копирование: Формулы и алгоритмы",PASS
+Chrome,390,LEGACY-5,"Выбор, поля, точный промпт и реальное копирование: Домашнее задание",PASS
+Chrome,390,LEGACY-6,"Выбор, поля, точный промпт и реальное копирование: Карточки Anki",PASS
+Chrome,390,LEGACY-7,"Выбор, поля, точный промпт и реальное копирование: Самопроверка",PASS
+Chrome,390,LEGACY-REPEAT,"Повторный выбор, сборка и копирование не дублируют текст",PASS
+Chrome,390,LEGACY-CUSTOM,Ручная настройка всех параметров отражается в промпте,PASS
+Chrome,390,INVALIDATE-material,Изменение material очищает устаревший результат,PASS
+Chrome,390,INVALIDATE-goal,Изменение goal очищает устаревший результат,PASS
+Chrome,390,INVALIDATE-language,Изменение language очищает устаревший результат,PASS
+Chrome,390,INVALIDATE-detail,Изменение detail очищает устаревший результат,PASS
+Chrome,390,INVALIDATE-source-mode,Изменение source-mode очищает устаревший результат,PASS
+Chrome,390,INVALIDATE-extra,Изменение extra очищает устаревший результат,PASS
+Chrome,390,INVALIDATE-formulas,Переключение formulas очищает устаревший результат,PASS
+Chrome,390,INVALIDATE-terms,Переключение terms очищает устаревший результат,PASS
+Chrome,390,INVALIDATE-homework,Переключение homework очищает устаревший результат,PASS
+Chrome,390,INVALIDATE-questions,Переключение questions очищает устаревший результат,PASS
+Chrome,390,LEGACY-FILE,"Выбор и снятие локального файла; имя отображается, файл не отправляется",PASS
+Chrome,390,INTEGRATION-01,Поиск и диалог сохраняют готовый промпт; выбор отфильтрованной карточки очищает его,PASS
+Chrome,390,COPY-DENIED,Симуляция отказа Clipboard API: текст выделен для Ctrl+C,PASS
+Chrome,390,NAV-01,Адаптивная навигация и переход к форме,PASS
+Chrome,390,LAYOUT-STATE,"Адаптив после действий, длинного статуса и выбора карточки",PASS
+Chrome,390,JS-ERRORS,Отсутствие необработанных JavaScript ошибок,PASS
+Chrome,390,CONSOLE-ERRORS,Отсутствие Console.error и сетевых ошибок,PASS
+Chrome,768,HTTP-01,"Открытие через HTTP; загрузка HTML, CSS, JS",PASS
+Chrome,768,INIT-01,"Семь исходных карточек в правильном порядке, счётчик, скрытый диалог",PASS
+Chrome,768,LAYOUT-01,"Адаптив: сетка, отсутствие горизонтального переполнения и обрезания текста",PASS
+Chrome,768,SEARCH-1,Живой поиск: Подробный конспект,PASS
+Chrome,768,SEARCH-2,Живой поиск: Краткое резюме,PASS
+Chrome,768,SEARCH-3,Живой поиск: Термины и определения,PASS
+Chrome,768,SEARCH-4,Живой поиск: Формулы и алгоритмы,PASS
+Chrome,768,SEARCH-5,Живой поиск: Домашнее задание,PASS
+Chrome,768,SEARCH-6,Живой поиск: Карточки Anki,PASS
+Chrome,768,SEARCH-7,Живой поиск: Самопроверка,PASS
+Chrome,768,SEARCH-CASE,"Поиск игнорирует регистр, пробелы по краям и NBSP",PASS
+Chrome,768,SEARCH-SPACES,Нормализация повторных внутренних пробелов,PASS
+Chrome,768,SEARCH-LIVE,Посимвольный ввод и Backspace обновляют список без Enter,PASS
+Chrome,768,SEARCH-EMPTY,"Пустой запрос, только пробелы и отсутствующее слово",PASS
+Chrome,768,SEARCH-TEXT,Спецсимволы являются текстом; поиск соответствует заголовкам,PASS
+Chrome,768,FILTER-all,Фильтр категории: all,PASS
+Chrome,768,FILTER-notes,Фильтр категории: notes,PASS
+Chrome,768,FILTER-study,Фильтр категории: study,PASS
+Chrome,768,FILTER-practice,Фильтр категории: practice,PASS
+Chrome,768,AND-0-all,Пересечение и оба порядка: «» + all,PASS
+Chrome,768,AND-0-notes,Пересечение и оба порядка: «» + notes,PASS
+Chrome,768,AND-0-study,Пересечение и оба порядка: «» + study,PASS
+Chrome,768,AND-0-practice,Пересечение и оба порядка: «» + practice,PASS
+Chrome,768,AND-1-all,Пересечение и оба порядка: «конспект» + all,PASS
+Chrome,768,AND-1-notes,Пересечение и оба порядка: «конспект» + notes,PASS
+Chrome,768,AND-1-study,Пересечение и оба порядка: «конспект» + study,PASS
+Chrome,768,AND-1-practice,Пересечение и оба порядка: «конспект» + practice,PASS
+Chrome,768,AND-2-all,Пересечение и оба порядка: «AnKi» + all,PASS
+Chrome,768,AND-2-notes,Пересечение и оба порядка: «AnKi» + notes,PASS
+Chrome,768,AND-2-study,Пересечение и оба порядка: «AnKi» + study,PASS
+Chrome,768,AND-2-practice,Пересечение и оба порядка: «AnKi» + practice,PASS
+Chrome,768,AND-3-all,Пересечение и оба порядка: «формулы» + all,PASS
+Chrome,768,AND-3-notes,Пересечение и оба порядка: «формулы» + notes,PASS
+Chrome,768,AND-3-study,Пересечение и оба порядка: «формулы» + study,PASS
+Chrome,768,AND-3-practice,Пересечение и оба порядка: «формулы» + practice,PASS
+Chrome,768,AND-4-all,Пересечение и оба порядка: «несуществующий» + all,PASS
+Chrome,768,AND-4-notes,Пересечение и оба порядка: «несуществующий» + notes,PASS
+Chrome,768,AND-4-study,Пересечение и оба порядка: «несуществующий» + study,PASS
+Chrome,768,AND-4-practice,Пересечение и оба порядка: «несуществующий» + practice,PASS
+Chrome,768,RESET-01,Сброс из нулевого результата; 10 повторных кликов; фокус,PASS
+Chrome,768,KEYBOARD-01,"Tab по поиску, категории, сбросу и видимой карточке; скрытые пропускаются",PASS
+Chrome,768,MODAL-1,"Подробности карточки 1: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,768,MODAL-2,"Подробности карточки 2: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,768,MODAL-3,"Подробности карточки 3: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,768,MODAL-4,"Подробности карточки 4: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,768,MODAL-5,"Подробности карточки 5: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,768,MODAL-6,"Подробности карточки 6: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,768,MODAL-7,"Подробности карточки 7: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,768,MODAL-ESC,Escape закрывает диалог и возвращает фокус; повторный Escape безопасен,PASS
+Chrome,768,MODAL-TAB,Tab и Shift+Tab сохраняют фокус внутри диалога,PASS
+Chrome,768,MODAL-REPEAT,"10 открытий, двойной клик и отсутствие дублированных эффектов",PASS
+Chrome,768,LEGACY-VALIDATION,Обязательные тип материала и цель блокируют пустой промпт,PASS
+Chrome,768,LEGACY-1,"Выбор, поля, точный промпт и реальное копирование: Подробный конспект",PASS
+Chrome,768,LEGACY-2,"Выбор, поля, точный промпт и реальное копирование: Краткое резюме",PASS
+Chrome,768,LEGACY-3,"Выбор, поля, точный промпт и реальное копирование: Термины и определения",PASS
+Chrome,768,LEGACY-4,"Выбор, поля, точный промпт и реальное копирование: Формулы и алгоритмы",PASS
+Chrome,768,LEGACY-5,"Выбор, поля, точный промпт и реальное копирование: Домашнее задание",PASS
+Chrome,768,LEGACY-6,"Выбор, поля, точный промпт и реальное копирование: Карточки Anki",PASS
+Chrome,768,LEGACY-7,"Выбор, поля, точный промпт и реальное копирование: Самопроверка",PASS
+Chrome,768,LEGACY-REPEAT,"Повторный выбор, сборка и копирование не дублируют текст",PASS
+Chrome,768,LEGACY-CUSTOM,Ручная настройка всех параметров отражается в промпте,PASS
+Chrome,768,INVALIDATE-material,Изменение material очищает устаревший результат,PASS
+Chrome,768,INVALIDATE-goal,Изменение goal очищает устаревший результат,PASS
+Chrome,768,INVALIDATE-language,Изменение language очищает устаревший результат,PASS
+Chrome,768,INVALIDATE-detail,Изменение detail очищает устаревший результат,PASS
+Chrome,768,INVALIDATE-source-mode,Изменение source-mode очищает устаревший результат,PASS
+Chrome,768,INVALIDATE-extra,Изменение extra очищает устаревший результат,PASS
+Chrome,768,INVALIDATE-formulas,Переключение formulas очищает устаревший результат,PASS
+Chrome,768,INVALIDATE-terms,Переключение terms очищает устаревший результат,PASS
+Chrome,768,INVALIDATE-homework,Переключение homework очищает устаревший результат,PASS
+Chrome,768,INVALIDATE-questions,Переключение questions очищает устаревший результат,PASS
+Chrome,768,LEGACY-FILE,"Выбор и снятие локального файла; имя отображается, файл не отправляется",PASS
+Chrome,768,INTEGRATION-01,Поиск и диалог сохраняют готовый промпт; выбор отфильтрованной карточки очищает его,PASS
+Chrome,768,COPY-DENIED,Симуляция отказа Clipboard API: текст выделен для Ctrl+C,PASS
+Chrome,768,NAV-01,Адаптивная навигация и переход к форме,PASS
+Chrome,768,LAYOUT-STATE,"Адаптив после действий, длинного статуса и выбора карточки",PASS
+Chrome,768,JS-ERRORS,Отсутствие необработанных JavaScript ошибок,PASS
+Chrome,768,CONSOLE-ERRORS,Отсутствие Console.error и сетевых ошибок,PASS
+Chrome,1024,HTTP-01,"Открытие через HTTP; загрузка HTML, CSS, JS",PASS
+Chrome,1024,INIT-01,"Семь исходных карточек в правильном порядке, счётчик, скрытый диалог",PASS
+Chrome,1024,LAYOUT-01,"Адаптив: сетка, отсутствие горизонтального переполнения и обрезания текста",PASS
+Chrome,1024,SEARCH-1,Живой поиск: Подробный конспект,PASS
+Chrome,1024,SEARCH-2,Живой поиск: Краткое резюме,PASS
+Chrome,1024,SEARCH-3,Живой поиск: Термины и определения,PASS
+Chrome,1024,SEARCH-4,Живой поиск: Формулы и алгоритмы,PASS
+Chrome,1024,SEARCH-5,Живой поиск: Домашнее задание,PASS
+Chrome,1024,SEARCH-6,Живой поиск: Карточки Anki,PASS
+Chrome,1024,SEARCH-7,Живой поиск: Самопроверка,PASS
+Chrome,1024,SEARCH-CASE,"Поиск игнорирует регистр, пробелы по краям и NBSP",PASS
+Chrome,1024,SEARCH-SPACES,Нормализация повторных внутренних пробелов,PASS
+Chrome,1024,SEARCH-LIVE,Посимвольный ввод и Backspace обновляют список без Enter,PASS
+Chrome,1024,SEARCH-EMPTY,"Пустой запрос, только пробелы и отсутствующее слово",PASS
+Chrome,1024,SEARCH-TEXT,Спецсимволы являются текстом; поиск соответствует заголовкам,PASS
+Chrome,1024,FILTER-all,Фильтр категории: all,PASS
+Chrome,1024,FILTER-notes,Фильтр категории: notes,PASS
+Chrome,1024,FILTER-study,Фильтр категории: study,PASS
+Chrome,1024,FILTER-practice,Фильтр категории: practice,PASS
+Chrome,1024,AND-0-all,Пересечение и оба порядка: «» + all,PASS
+Chrome,1024,AND-0-notes,Пересечение и оба порядка: «» + notes,PASS
+Chrome,1024,AND-0-study,Пересечение и оба порядка: «» + study,PASS
+Chrome,1024,AND-0-practice,Пересечение и оба порядка: «» + practice,PASS
+Chrome,1024,AND-1-all,Пересечение и оба порядка: «конспект» + all,PASS
+Chrome,1024,AND-1-notes,Пересечение и оба порядка: «конспект» + notes,PASS
+Chrome,1024,AND-1-study,Пересечение и оба порядка: «конспект» + study,PASS
+Chrome,1024,AND-1-practice,Пересечение и оба порядка: «конспект» + practice,PASS
+Chrome,1024,AND-2-all,Пересечение и оба порядка: «AnKi» + all,PASS
+Chrome,1024,AND-2-notes,Пересечение и оба порядка: «AnKi» + notes,PASS
+Chrome,1024,AND-2-study,Пересечение и оба порядка: «AnKi» + study,PASS
+Chrome,1024,AND-2-practice,Пересечение и оба порядка: «AnKi» + practice,PASS
+Chrome,1024,AND-3-all,Пересечение и оба порядка: «формулы» + all,PASS
+Chrome,1024,AND-3-notes,Пересечение и оба порядка: «формулы» + notes,PASS
+Chrome,1024,AND-3-study,Пересечение и оба порядка: «формулы» + study,PASS
+Chrome,1024,AND-3-practice,Пересечение и оба порядка: «формулы» + practice,PASS
+Chrome,1024,AND-4-all,Пересечение и оба порядка: «несуществующий» + all,PASS
+Chrome,1024,AND-4-notes,Пересечение и оба порядка: «несуществующий» + notes,PASS
+Chrome,1024,AND-4-study,Пересечение и оба порядка: «несуществующий» + study,PASS
+Chrome,1024,AND-4-practice,Пересечение и оба порядка: «несуществующий» + practice,PASS
+Chrome,1024,RESET-01,Сброс из нулевого результата; 10 повторных кликов; фокус,PASS
+Chrome,1024,KEYBOARD-01,"Tab по поиску, категории, сбросу и видимой карточке; скрытые пропускаются",PASS
+Chrome,1024,MODAL-1,"Подробности карточки 1: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1024,MODAL-2,"Подробности карточки 2: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1024,MODAL-3,"Подробности карточки 3: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1024,MODAL-4,"Подробности карточки 4: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1024,MODAL-5,"Подробности карточки 5: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1024,MODAL-6,"Подробности карточки 6: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1024,MODAL-7,"Подробности карточки 7: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1024,MODAL-ESC,Escape закрывает диалог и возвращает фокус; повторный Escape безопасен,PASS
+Chrome,1024,MODAL-TAB,Tab и Shift+Tab сохраняют фокус внутри диалога,PASS
+Chrome,1024,MODAL-REPEAT,"10 открытий, двойной клик и отсутствие дублированных эффектов",PASS
+Chrome,1024,LEGACY-VALIDATION,Обязательные тип материала и цель блокируют пустой промпт,PASS
+Chrome,1024,LEGACY-1,"Выбор, поля, точный промпт и реальное копирование: Подробный конспект",PASS
+Chrome,1024,LEGACY-2,"Выбор, поля, точный промпт и реальное копирование: Краткое резюме",PASS
+Chrome,1024,LEGACY-3,"Выбор, поля, точный промпт и реальное копирование: Термины и определения",PASS
+Chrome,1024,LEGACY-4,"Выбор, поля, точный промпт и реальное копирование: Формулы и алгоритмы",PASS
+Chrome,1024,LEGACY-5,"Выбор, поля, точный промпт и реальное копирование: Домашнее задание",PASS
+Chrome,1024,LEGACY-6,"Выбор, поля, точный промпт и реальное копирование: Карточки Anki",PASS
+Chrome,1024,LEGACY-7,"Выбор, поля, точный промпт и реальное копирование: Самопроверка",PASS
+Chrome,1024,LEGACY-REPEAT,"Повторный выбор, сборка и копирование не дублируют текст",PASS
+Chrome,1024,LEGACY-CUSTOM,Ручная настройка всех параметров отражается в промпте,PASS
+Chrome,1024,INVALIDATE-material,Изменение material очищает устаревший результат,PASS
+Chrome,1024,INVALIDATE-goal,Изменение goal очищает устаревший результат,PASS
+Chrome,1024,INVALIDATE-language,Изменение language очищает устаревший результат,PASS
+Chrome,1024,INVALIDATE-detail,Изменение detail очищает устаревший результат,PASS
+Chrome,1024,INVALIDATE-source-mode,Изменение source-mode очищает устаревший результат,PASS
+Chrome,1024,INVALIDATE-extra,Изменение extra очищает устаревший результат,PASS
+Chrome,1024,INVALIDATE-formulas,Переключение formulas очищает устаревший результат,PASS
+Chrome,1024,INVALIDATE-terms,Переключение terms очищает устаревший результат,PASS
+Chrome,1024,INVALIDATE-homework,Переключение homework очищает устаревший результат,PASS
+Chrome,1024,INVALIDATE-questions,Переключение questions очищает устаревший результат,PASS
+Chrome,1024,LEGACY-FILE,"Выбор и снятие локального файла; имя отображается, файл не отправляется",PASS
+Chrome,1024,INTEGRATION-01,Поиск и диалог сохраняют готовый промпт; выбор отфильтрованной карточки очищает его,PASS
+Chrome,1024,COPY-DENIED,Симуляция отказа Clipboard API: текст выделен для Ctrl+C,PASS
+Chrome,1024,NAV-01,Адаптивная навигация и переход к форме,PASS
+Chrome,1024,LAYOUT-STATE,"Адаптив после действий, длинного статуса и выбора карточки",PASS
+Chrome,1024,JS-ERRORS,Отсутствие необработанных JavaScript ошибок,PASS
+Chrome,1024,CONSOLE-ERRORS,Отсутствие Console.error и сетевых ошибок,PASS
+Chrome,1440,HTTP-01,"Открытие через HTTP; загрузка HTML, CSS, JS",PASS
+Chrome,1440,INIT-01,"Семь исходных карточек в правильном порядке, счётчик, скрытый диалог",PASS
+Chrome,1440,LAYOUT-01,"Адаптив: сетка, отсутствие горизонтального переполнения и обрезания текста",PASS
+Chrome,1440,SEARCH-1,Живой поиск: Подробный конспект,PASS
+Chrome,1440,SEARCH-2,Живой поиск: Краткое резюме,PASS
+Chrome,1440,SEARCH-3,Живой поиск: Термины и определения,PASS
+Chrome,1440,SEARCH-4,Живой поиск: Формулы и алгоритмы,PASS
+Chrome,1440,SEARCH-5,Живой поиск: Домашнее задание,PASS
+Chrome,1440,SEARCH-6,Живой поиск: Карточки Anki,PASS
+Chrome,1440,SEARCH-7,Живой поиск: Самопроверка,PASS
+Chrome,1440,SEARCH-CASE,"Поиск игнорирует регистр, пробелы по краям и NBSP",PASS
+Chrome,1440,SEARCH-SPACES,Нормализация повторных внутренних пробелов,PASS
+Chrome,1440,SEARCH-LIVE,Посимвольный ввод и Backspace обновляют список без Enter,PASS
+Chrome,1440,SEARCH-EMPTY,"Пустой запрос, только пробелы и отсутствующее слово",PASS
+Chrome,1440,SEARCH-TEXT,Спецсимволы являются текстом; поиск соответствует заголовкам,PASS
+Chrome,1440,FILTER-all,Фильтр категории: all,PASS
+Chrome,1440,FILTER-notes,Фильтр категории: notes,PASS
+Chrome,1440,FILTER-study,Фильтр категории: study,PASS
+Chrome,1440,FILTER-practice,Фильтр категории: practice,PASS
+Chrome,1440,AND-0-all,Пересечение и оба порядка: «» + all,PASS
+Chrome,1440,AND-0-notes,Пересечение и оба порядка: «» + notes,PASS
+Chrome,1440,AND-0-study,Пересечение и оба порядка: «» + study,PASS
+Chrome,1440,AND-0-practice,Пересечение и оба порядка: «» + practice,PASS
+Chrome,1440,AND-1-all,Пересечение и оба порядка: «конспект» + all,PASS
+Chrome,1440,AND-1-notes,Пересечение и оба порядка: «конспект» + notes,PASS
+Chrome,1440,AND-1-study,Пересечение и оба порядка: «конспект» + study,PASS
+Chrome,1440,AND-1-practice,Пересечение и оба порядка: «конспект» + practice,PASS
+Chrome,1440,AND-2-all,Пересечение и оба порядка: «AnKi» + all,PASS
+Chrome,1440,AND-2-notes,Пересечение и оба порядка: «AnKi» + notes,PASS
+Chrome,1440,AND-2-study,Пересечение и оба порядка: «AnKi» + study,PASS
+Chrome,1440,AND-2-practice,Пересечение и оба порядка: «AnKi» + practice,PASS
+Chrome,1440,AND-3-all,Пересечение и оба порядка: «формулы» + all,PASS
+Chrome,1440,AND-3-notes,Пересечение и оба порядка: «формулы» + notes,PASS
+Chrome,1440,AND-3-study,Пересечение и оба порядка: «формулы» + study,PASS
+Chrome,1440,AND-3-practice,Пересечение и оба порядка: «формулы» + practice,PASS
+Chrome,1440,AND-4-all,Пересечение и оба порядка: «несуществующий» + all,PASS
+Chrome,1440,AND-4-notes,Пересечение и оба порядка: «несуществующий» + notes,PASS
+Chrome,1440,AND-4-study,Пересечение и оба порядка: «несуществующий» + study,PASS
+Chrome,1440,AND-4-practice,Пересечение и оба порядка: «несуществующий» + practice,PASS
+Chrome,1440,RESET-01,Сброс из нулевого результата; 10 повторных кликов; фокус,PASS
+Chrome,1440,KEYBOARD-01,"Tab по поиску, категории, сбросу и видимой карточке; скрытые пропускаются",PASS
+Chrome,1440,MODAL-1,"Подробности карточки 1: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1440,MODAL-2,"Подробности карточки 2: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1440,MODAL-3,"Подробности карточки 3: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1440,MODAL-4,"Подробности карточки 4: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1440,MODAL-5,"Подробности карточки 5: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1440,MODAL-6,"Подробности карточки 6: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1440,MODAL-7,"Подробности карточки 7: текст, категория, закрытие и возврат фокуса",PASS
+Chrome,1440,MODAL-ESC,Escape закрывает диалог и возвращает фокус; повторный Escape безопасен,PASS
+Chrome,1440,MODAL-TAB,Tab и Shift+Tab сохраняют фокус внутри диалога,PASS
+Chrome,1440,MODAL-REPEAT,"10 открытий, двойной клик и отсутствие дублированных эффектов",PASS
+Chrome,1440,LEGACY-VALIDATION,Обязательные тип материала и цель блокируют пустой промпт,PASS
+Chrome,1440,LEGACY-1,"Выбор, поля, точный промпт и реальное копирование: Подробный конспект",PASS
+Chrome,1440,LEGACY-2,"Выбор, поля, точный промпт и реальное копирование: Краткое резюме",PASS
+Chrome,1440,LEGACY-3,"Выбор, поля, точный промпт и реальное копирование: Термины и определения",PASS
+Chrome,1440,LEGACY-4,"Выбор, поля, точный промпт и реальное копирование: Формулы и алгоритмы",PASS
+Chrome,1440,LEGACY-5,"Выбор, поля, точный промпт и реальное копирование: Домашнее задание",PASS
+Chrome,1440,LEGACY-6,"Выбор, поля, точный промпт и реальное копирование: Карточки Anki",PASS
+Chrome,1440,LEGACY-7,"Выбор, поля, точный промпт и реальное копирование: Самопроверка",PASS
+Chrome,1440,LEGACY-REPEAT,"Повторный выбор, сборка и копирование не дублируют текст",PASS
+Chrome,1440,LEGACY-CUSTOM,Ручная настройка всех параметров отражается в промпте,PASS
+Chrome,1440,INVALIDATE-material,Изменение material очищает устаревший результат,PASS
+Chrome,1440,INVALIDATE-goal,Изменение goal очищает устаревший результат,PASS
+Chrome,1440,INVALIDATE-language,Изменение language очищает устаревший результат,PASS
+Chrome,1440,INVALIDATE-detail,Изменение detail очищает устаревший результат,PASS
+Chrome,1440,INVALIDATE-source-mode,Изменение source-mode очищает устаревший результат,PASS
+Chrome,1440,INVALIDATE-extra,Изменение extra очищает устаревший результат,PASS
+Chrome,1440,INVALIDATE-formulas,Переключение formulas очищает устаревший результат,PASS
+Chrome,1440,INVALIDATE-terms,Переключение terms очищает устаревший результат,PASS
+Chrome,1440,INVALIDATE-homework,Переключение homework очищает устаревший результат,PASS
+Chrome,1440,INVALIDATE-questions,Переключение questions очищает устаревший результат,PASS
+Chrome,1440,LEGACY-FILE,"Выбор и снятие локального файла; имя отображается, файл не отправляется",PASS
+Chrome,1440,INTEGRATION-01,Поиск и диалог сохраняют готовый промпт; выбор отфильтрованной карточки очищает его,PASS
+Chrome,1440,COPY-DENIED,Симуляция отказа Clipboard API: текст выделен для Ctrl+C,PASS
+Chrome,1440,NAV-01,Адаптивная навигация и переход к форме,PASS
+Chrome,1440,LAYOUT-STATE,"Адаптив после действий, длинного статуса и выбора карточки",PASS
+Chrome,1440,JS-ERRORS,Отсутствие необработанных JavaScript ошибок,PASS
+Chrome,1440,CONSOLE-ERRORS,Отсутствие Console.error и сетевых ошибок,PASS
+Изолированный сайт,,,Отдельный сервер физически не выдаёт data/data.json,PASS
+Изолированный сайт,,,"Chrome прочитал CSS, применил мобильную сетку без переполнения",PASS
+Изолированный сайт,,,После reload семь видимых карточек без файлов данных,PASS
+Изолированный сайт,,,Поиск и категория на автономном сайте,PASS
+Изолированный сайт,,,Детали выбранной карточки,PASS
+Изолированный сайт,,,Точный результат автономной генерации,PASS
+Изолированный сайт,,,Сайт запросил только ресурсы из разрешённой четвёрки,PASS
+Android,,,После reload семь исходных шаблонов,PASS
+Android,,,HTTP и подлинность содержимого /,PASS
+Android,,,HTTP и подлинность содержимого /css/style.css,PASS
+Android,,,HTTP и подлинность содержимого /js/script.js,PASS
+Android,,,Сенсорная прокрутка и ширина документа,PASS
+Android,,,Фокус поиска и открытие IME,PASS
+Android,,,"Живой поиск Anki, регистр и пробелы",PASS
+Android,,,Запрос и подходящая категория,PASS
+Android,,,Нулевой результат и сообщение,PASS
+Android,,,Сброс категории и текста,PASS
+Android,,,Категория → запрос с внутренними пробелами,PASS
+Android,,,Содержимое диалога 3,PASS
+Android,,,Закрытие диалога 3,PASS
+Android,,,Содержимое диалога 6,PASS
+Android,,,Закрытие диалога 6,PASS
+Android,,,Содержимое диалога 3,PASS
+Android,,,Закрытие диалога 3,PASS
+Android,,,Пустая форма не формирует результат,PASS
+Android,,,Полный промпт 1,PASS
+Android,,,Полный промпт 2,PASS
+Android,,,Полный промпт 3,PASS
+Android,,,Полный промпт 4,PASS
+Android,,,Полный промпт 5,PASS
+Android,,,Полный промпт 6,PASS
+Android,,,Полный промпт 7,PASS
+Android,,,"Clipboard Android, доверенная вставка полного промпта",PASS
+Android,,,Старый промпт очищен при смене языка,PASS
+Android,,,ДЗ 5 работает без запроса data.json и без Fetch/XHR,PASS
+Android,,,"Console, JS и сеть",PASS
+Сравнение,,,initial,PASS
+Сравнение,,,search,PASS
+Сравнение,,,intersection,PASS
+Сравнение,,,zero,PASS
+Сравнение,,,reset,PASS
+Сравнение,,,modal1,PASS
+Сравнение,,,focus1,PASS
+Сравнение,,,modal6,PASS
+Сравнение,,,focus6,PASS
+Сравнение,,,invalid,PASS
+Сравнение,,,preset0,PASS
+Сравнение,,,prompt0,PASS
+Сравнение,,,clipboard0,PASS
+Сравнение,,,preset1,PASS
+Сравнение,,,prompt1,PASS
+Сравнение,,,clipboard1,PASS
+Сравнение,,,preset2,PASS
+Сравнение,,,prompt2,PASS
+Сравнение,,,clipboard2,PASS
+Сравнение,,,preset3,PASS
+Сравнение,,,prompt3,PASS
+Сравнение,,,clipboard3,PASS
+Сравнение,,,preset4,PASS
+Сравнение,,,prompt4,PASS
+Сравнение,,,clipboard4,PASS
+Сравнение,,,preset5,PASS
+Сравнение,,,prompt5,PASS
+Сравнение,,,clipboard5,PASS
+Сравнение,,,preset6,PASS
+Сравнение,,,prompt6,PASS
+Сравнение,,,clipboard6,PASS
+Сравнение,,,retained,PASS
+Сравнение,,,invalidated,PASS
+Сравнение,,,HW5 работает на отдельном HTTP без Fetch/XHR и data.json,PASS
+Сравнение,,,HW6 получает собственный JSON через HTTP,PASS
+Сравнение,,,Нет исключений JS в сравниваемых версиях,PASS
+Сдача,,,Функциональный прогон опубликованной ДЗ № 5,NOT_TESTED
+Сдача,,,Личная демонстрация и объяснение кода преподавателю,NOT_TESTED
